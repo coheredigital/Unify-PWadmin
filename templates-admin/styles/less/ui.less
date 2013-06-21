@@ -1,3 +1,301 @@
-.ui-widget-content{
-	.clearfix();
+// .ui-widget-content{
+// 	.clearfix();
+// }
+
+/**
+ * jQuery UI tooltips
+ *
+ */
+
+.ui-icon{
+    padding: 0!important;
+}
+.ui-tooltip {
+	z-index: 100;
+	border: none;
+	padding: 0.6em 1em;
+	background: @grayDark;
+	color: #fff;
+    .border-radius(0);
+	.box-shadow( 0 0 6px rgba(0,0,0,.3));
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 11px !important;
+}
+.ui-tooltip:before {
+    content: "";
+    position: absolute!important;
+    left: 50%;
+    top: 100%;
+    margin: 0 0 0 -6px;
+    width: 0;
+    z-index: 0;
+
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+    border-color: @grayDark transparent transparent transparent;
+}
+
+
+// SLIDER
+
+#columnWidthSlider{
+    width: 88%;
+    float: right;
+    margin: 7px 1%;
+}
+.ui-slider{
+    padding: 0!important;
+    overflow: visible!important;
+}
+input#columnWidth{
+    width: 8%;
+    text-align: center;
+}
+
+
+
+// buttons
+.InputfieldPageAdd .InputfieldPageAddButton > a,
+.ui-button.ui-state-default,
+.ui-button{
+    margin: 0;
+    padding: 6px 12px!important;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    border-color: rgba(0,0,0,0.15)!important;
+    text-shadow: 0 0 2px rgba(0,0,0,0.2);
+    background: @blue;
+    color: #fff!important;
+}
+.InputfieldPageAdd .InputfieldPageAddButton > a:hover,
+.ui-button.ui-state-hover,
+.ui-button:hover{
+    background: @pink;
+}
+.ui-button-text{
+    padding: 0 !important;
+}
+.ui-button.ui-priority-secondary{
+    background: @gray !important;
+    opacity: 1;
+}
+.ui-button.ui-priority-secondary:hover{
+    background: @pink !important;
+}
+
+
+#submit_publish,
+#submit_publish_copy,
+#submit_save,
+#submit_save_copy,
+#submit_save_form_fields,
+#submit_save_form_fields_copy,
+#Inputfield_submit,
+#Inputfield_submit_copy{
+    background: @success;
+    border-color: @successDark;
+    color: #fff;
+    text-transform: uppercase;
+}
+#submit_publish_copy:hover,
+#submit_publish:hover,
+#submit_save_form_fields_copy:hover,
+#submit_save_form_fields:hover,
+#submit_save_copy:hover,
+#submit_save:hover,
+#Inputfield_submit_copy:hover,
+#Inputfield_submit:hover{
+    background: @successDark;
+    border-color: @successDarker;
+}
+
+
+
+.error-text,
+#_ProcessPageEditDelete,
+.PageListActionEmpty a,
+#_WireTabDelete{
+    color: @error!important;
+}
+#_ProcessPageEditDelete:hover,
+.PageListActionEmpty a:hover,
+#_WireTabDelete:hover{
+    color: @errorDark!important;
+}
+a.on#_ProcessPageEditDelete,
+a.on#_WireTabDelete{
+    color: #fff!important;
+    background: @error;
+}
+
+
+.InputfieldPageAddButton{
+    .clearfix();
+    padding: 2px 0!important;
+    a{
+        text-transform: uppercase;
+        float: right;
+        .ui-button();
+        .ui-state-default();
+    }
+    .ui-icon{
+        display: none!important;
+    }
+}
+.InputfieldPageAddButton a:hover{
+    .ui-state-hover();
+}
+
+
+
+
+
+.ui-autocomplete-input{
+    padding-left: 25px!important;
+    width: 100%!important;
+}
+.InputfieldPageAutocompleteStatus{
+    margin: 4px;
+}
+
+
+.ui-state-error{
+    border: none!important;
+}
+
+
+// ui-dialog
+.ui-dialog{
+    padding: 0;
+    border: 0;
+    z-index: 10001 !important;
+    .box-shadow( 0 1px 12px rgba(0,0,0,0.2));
+    iframe{
+        padding: 0 !important;
+
+    }
+}
+.ui-dialog-buttonpane,
+.ui-dialog-titlebar{
+    .box-shadow( 0 1px 4px rgba(0,0,0,0.3));
+    z-index: 100;
+    position: relative;
+}
+.ui-dialog-buttonpane{
+    margin: -3px 0 0 0 !important;
+    padding: 8px 10px !important;
+}
+.ui-dialog-title{
+    margin: 2px 0 !important;
+}
+.modal .nav-wrap{
+    display: none !important;
+}
+.ui-widget-overlay{
+    background: #000;
+    z-index: 10000 !important;
+}
+.ui-dialog-titlebar-close{
+    width: auto !important;
+    right: 8px !important;
+    .border-radius(16px);
+    text-align: center  !important;
+    span{
+        margin: 1px !important;
+    }
+}
+#select_images{
+    // -moz-column-count: 5;
+    // -webkit-column-count: 5;
+    // column-count: 5;
+
+    // -moz-column-gap: 1em;
+    // -webkit-column-gap: 1em;
+    // column-gap: 1em;
+    li{
+        // text-align: center;
+        margin: 0 1em 1em 0;
+        a img{
+            .box-shadow(0 0 4px #ccc);
+            border: 4px solid #fff;
+            &:hover{
+                border: 4px solid @blue;
+            }
+        }
+    }
+}
+
+.ui-dialog-titlebar-close:hover{
+    background-color: @grayDark;
+    border-color: rgba(0,0,0,0.15);
+}
+#selected_image_settings{
+    #wrap_info{
+        .detail{
+            display: block;
+            margin-top: -1.4em !important;
+        }
+        padding-bottom: 1em;
+        border-bottom: 1px solid #eee;
+    }
+    #wrap_description{
+        padding: 1.3em 0 1em 0 !important;
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #eee;
+        label{
+            top: 1.9em;
+            left: 8px;
+        }
+    }
+
+    #wrap_class{
+        float: none;
+        padding-top: 1.3em !important;
+        border-top: 1px solid #fff;
+    }
+    #wrap_link_original{
+        padding-bottom: 1em;
+        label{
+            line-height: 12px;
+        }
+        label input{
+            // vertical-align: text-top;
+
+        }
+        .detail{
+            font-family: monospace;
+            color: #999;
+            font-size: 12px;
+        }
+    }
+}
+#selected_image_pixels{
+    .clearfix();
+    display: block;
+    margin-top: 1em !important;
+
+    label{
+        float: left !important;
+        margin-right: 1em;
+    }
+}
+
+.ui-progressbar{
+    background: @grayLighter !important;
+    border: 1px solid rgba(0,0,0,0.15)!important;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 21px !important;
+    overflow: visible;
+    position: absolute;
+    z-index: 0;
+    .ui-progressbar-value{
+        background: @success;
+        border: 1px solid rgba(0,0,0,0.15)!important;
+        margin: -1px 0 -1px -1px !important;
+    }
+
 }

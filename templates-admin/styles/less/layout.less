@@ -2,50 +2,29 @@
 	border-top: 1px solid #fff;
 	background: @grayLightest;
 	.box-shadow( 0 0 8px rgba(0,0,0,.3));
-	overflow: hidden;
-}
-#header{
-	border-top: 6px solid @adminAccent;
-	background: #222;
 	.clearfix();
 }
+#header{
+	// border-top: 6px solid @blue;
+	background: #fff;
+
+	border-top: 1px solid @grayLight;
+	border-bottom: 1px solid @grayLight;
+	.clearfix();
+	.box-shadow( 0 0 5px rgba(0,0,0,.1) );
+	position: relative;
+	z-index: 50;
+}
 #footer {
-	width: 100%;
 	clear: both;
-	padding: 24px 0;
-	h2{
-		color: @grayDark;
-	}
-	table{
-		border-color: @adminAccentDark;
-		tr{
-			th{
-				background: @adminAccentDark;
-			}
-			th, td{
-				border-color: @adminAccentDarker;
-				color: #fff;
-				a{
-					color: @grayDark;
-				}
-				a:hover{
-					color: #fff;
-				}
-			}
-		}
-		tr:hover td{
-			background: @adminAccentLight;
-		}
-	}
-	img{
-		margin: 32px 0;
-	}
+	padding: 1em 0;
 }
 .container{
 	max-width: 1200px;
 	width: auto;
 	padding: 0 12px;
 	margin: 0 auto;
+	position: relative;
 }
 
 #content {
@@ -58,13 +37,3 @@
 	}
 
 }
-
-.half{
-	width: 48.5%;
-	margin: 0 0 0 3%;
-	float: left;
-}
-.half:first-child{
-	margin: 0;
-}
-

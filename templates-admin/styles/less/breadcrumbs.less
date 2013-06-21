@@ -1,13 +1,13 @@
 #breadcrumbs {
 	padding: 0;
-	margin: 0 0 -1px 0;
-	list-style: none;
+	margin: 0;
 	overflow: hidden;
+	border-left: 1px solid @grayLighter;
 	li {
 		display: inline-block;
 		a{
 			color: @gray;
-			font-size: 11px;		
+			font-size: 11px;
 			padding: 0 8px 0 24px;
 			font-weight: bold;
 			display: block;
@@ -21,37 +21,41 @@
 				height: 0;
 				border-top: 17px solid transparent;           /* Go big on the size, and let overflow hide */
 				border-bottom: 17px solid transparent;
-				border-left: 13px solid darken(@grayLighter, 5%);
+				border-left: 13px solid darken(@grayLighter, 3%);
 				position: absolute;
 				top: -2px;
 				right: -14px;
-				z-index: 2;
+				z-index: 1;
 			}
 			&:before {
 				right: -13px;
-				z-index: 5;
+				z-index: 2;
 				border-left-color: @grayLightest;
 			}
 			&:hover {
 				color: #fff;
-				border-color: @adminAccentDark;
-				background: @adminAccent;
-			}
-			&:hover:before {
-				border-left-color: @adminAccent;
-			}
-			&:hover:after {
-				border-left-color: @adminAccentDark;
+				border-color: @blueDark;
+				color: @blue;
 			}
 		}
 		&:first-child a{
 			padding-left: 14px;
 		}
 	}
+	li.fright a{
+		padding: 0 8px;
+		&:after, &:before {
+			display: none!important;
+		}
+	}
+	li:first-child{
+		border-left: 1px solid #fff;
+	}
 
 }
 #bread{
 	// background: @grayLighter;
+	position: relative;
 	background: #fbfbfb;
 	border-bottom: 1px solid #eee;
 }

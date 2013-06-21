@@ -31,21 +31,24 @@ $config->scripts->append($config->urls->adminTemplates . "scripts/main.js");
 	<?php foreach($config->styles->unique() as $file) echo "\n\t<link type='text/css' href='$file' rel='stylesheet' />"; ?>
 	<!--[if lt IE 9 ]>
 	<link rel="stylesheet" type="text/css" href="<? echo $config->urls->adminTemplates ?>styles/ie.css" />
-	<![endif]-->	
+	<![endif]-->
 	<?php foreach($config->scripts->unique() as $file) echo "\n\t<script type='text/javascript' src='$file'></script>"; ?>
 </head>
 
 <?php if($user->isGuest()):?>
 
 
-<body id="metro_pw" class="login">
-	<?php if(count($notices)) include("notices.inc"); ?>
-	<div id="login">
-
+<body id="branded" class="login">
+	
+	<div class="login-box">
 		<div id="logo">
-        	<img src="<?php echo $config->urls->adminTemplates ?>styles/images/logo.png">
+        	<img src="<?php echo $config->urls->adminTemplates ?>styles/images/pw-logo.png">
         </div>
-	    <?php echo $content?>
+        <div class="login-form">
+        	<?php echo $content?>
+        </div>
+	    <?php if(count($notices)) include("notices.inc"); ?>
+	    <div id="skyline"></div>
 	</div>
 	<script>
 	$(document).ready(function() {
@@ -58,11 +61,17 @@ $config->scripts->append($config->urls->adminTemplates . "scripts/main.js");
 <?php else: ?>
 
 
-<body id="metro_pw"<?php if($bodyClass) echo " class='$bodyClass'"; ?> >
+<body id="branded" <?php if($bodyClass) echo " class='$bodyClass'"; ?> >
+	<div class="nav-wrap">
+		<div class="container">
+			<?php echo $searchForm; ?>
+			<img width="170" class="fleft logo" src="<?php echo $config->urls->adminTemplates ?>styles/images/logo.png">
+			<?php include("topnav.inc"); ?>
+		</div>
+
+	</div>
 	<div id="header">
 		<div class="container">
-			<?php include("topnav.inc"); ?>
-			<?php echo $searchForm; ?>
 			<h1><?php echo strip_tags($this->fuel->processHeadline ? $this->fuel->processHeadline : $page->get("title|name")); ?></h1>
 	    	<?php if(trim($page->summary)) echo "<h2>{$page->summary}</h2>"; ?>
 		</div>
@@ -78,13 +87,22 @@ $config->scripts->append($config->urls->adminTemplates . "scripts/main.js");
 				}
 			?>
 			<li class="fright"><a target="_blank" id="view-site" href="<?php echo $config->urls->root; ?>">View Site</a></li>
+			<li class="fright"><a href='<?php echo $config->urls->admin; ?>login/logout/'>Logout</a></li>
+			<li class="fright">
+
+				<?php if ($user->hasPermission('profile-edit')): ?>
+					<a class='action' href='<?php echo $config->urls->admin; ?>profile/'><?php echo $user->name; ?></a>
+				<?php endif ?>
+
+			</li>
+
 			</ul>
 		</div>
 	</div>
 	<div id="main">
 		<div class="container">
 			<?php if(count($notices)) include("notices.inc"); ?>
-		    <div id="content">
+		    <div id="content" class="fouc_fix">
 				<div class="container">
 					<?php if($page->body) echo $page->body; ?>
 					<?php echo $content?>
@@ -93,13 +111,14 @@ $config->scripts->append($config->urls->adminTemplates . "scripts/main.js");
 			</div>
 		</div>
 	</div>
+
 	<div id="footer">
 		<div class="container">
-			<?php include('updates.inc') ?>
+
+
 		</div>
 		<div class="container">
 			<p class="copy fright"><a href="http://processwire.com/">ProcessWire</a> <?php echo $config->version; ?> - Copyright &copy; <?php echo date("Y"); ?> by Ryan Cramer</p>
-			<img class="fleft" src="<?php echo $config->urls->adminTemplates ?>styles/images/logo.png">
 		</div>
 	</div>
 

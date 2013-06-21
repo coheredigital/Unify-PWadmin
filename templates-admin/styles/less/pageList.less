@@ -1,87 +1,120 @@
+.PageListRoot{
+	 padding-bottom: 1em;
+}
 a.PageListPage,
 a.PageListPage:hover {
 	font-weight: bold;
-	color: @adminAccent;
-	background: transparent;
+	color: @blue;
+	background: transparent!important;
 }
 a.PageListPage:hover {
-	color: @adminAccentDark;
+	color: @pink;
+}
+
+.PageList{
+	margin-top: 0!important;
+	.PageListItem{
+		border-top: none!important;
+	}
+}
+
+.PageListItem {
+	border-bottom: 1px solid @grayLighter;
+	border-top: 1px solid #fff;
+
+	&.PageListStatusUnpublished a{
+			color: @gray;
+		}
+	.PageListActions {
+		margin-left:3px;
+		li{
+			border: none;
+		}
+
+	}
+
+	&.ui-sortable-helper{
+		.box-shadow(0 2px 9px rgba(0,0,0,.1));
+		border: 1px solid @grayLight!important;
+		background: #fff;
+		padding: 8px 1%!important;
+		width: 98%!important;
+	}
 }
 
 
-.PageListRoot{
-	.clearfix();
-	// > .PageList, > .PageList > .PageList {
-	// 	margin-left: 0;
-	// 	padding-left: 0;
-	// }
-
-
-	.PageListItem {
-		background: @grayLighter;
-		line-height: 26px;
-		border: 1px solid @grayLight;
-		.listItemSpacing();
-		position: relative;
-		padding: 0 8px;
-		.PageListNumChildren{
+.PageListSelectHeader{
+	margin: 6px 0 19px 0;
+	clear: both;
+	.PageListActions {
+		li{
+			border: 0;
 			float: right;
-			font-weight: bold;
-		}
-		&.PageListStatusUnpublished a{
- 			color: @gray;
- 		}
-		.PageListActions {
-			margin-left:3px;
-			li{
-				border-color: @adminAccentDark;
-				a {
-				    padding: 3px 6px;
-				    // color: #fff;
-				    color: #222;
-				    text-transform: uppercase;
-				    font-size: 11px;
-				    font-weight: bold;
-				}
-				a:hover{
-					color: #222;
-				}
-
-			}
-
-		}
-		&.PageListItemOpen, &.PageListSortItem{
-			background: @adminAccent;
-			border-color: @adminAccentDark;
-			.PageListPage{
-				color: #fff!important;
-			}
 		}
 	}
 
-
+	.PageListSelectActions{
+		float: right;
+		padding: 0;
+		display: inline-block!important;
+	}
+	.PageListSelectActionToggle:empty{
+		display: none!important;
+	}
 }
-.PageListPagination,
-.PageList{
-	position: relative;
-}
 
-.PageListMoveNote{
-	color: @grayDark;
-	a{ // this should always be the cancel link I believe...
+
+
+
+
+.PageListItem .PageListMoveNote,
+.PageList .PageListActionMore,
+.PageListItem .PageListActions{
+	a {
+		border: 1px solid rgba(0,0,0,0.15)!important;
+		background: #fff;
+		margin: 0 0 0 3px!important;
+	    padding: 3px 6px;
+	    // color: #fff;
+	    color: @grayDark;
+	    text-transform: uppercase;
+	    font-size: 11px;
+	    font-weight: bold;
+	}
+	a:hover{
 		color: #fff;
-		text-transform: uppercase;
-		background: @error;
-		position: absolute;
-		font-weight: bold;
-		border: 1px solid @errorDark!important;
-		right: -1px;
-		top: -1px;
-		bottom: -1px;
-		padding: 0 8px;
-	}	
+		background: @blue;
+	}
+}
+
+.PageListSelectActionToggle{
+	padding: 4px!important;
+	color: #fff!important;
+}
+
+.PageListItemOpen, .PageListSortItem{
+	.PageListNumChildren,
+	.PageListPage{
+		color: @pink;
+	}
+}
+
+.PageListNumChildren{
+	color: @gray;
+	float: right;
+	font-weight: bold;
+	font-size: 12px!important;
+}
+.PageListItem:hover > .PageListNumChildren{
+	color: @blue;
+}
+.PageListMoveNote{
+	color: @gray;
+	a{ // this should always be the cancel link I believe...
+		color: @error!important;
+	}
 	a:hover{ // this should always be the cancel link I believe...
-		background: @errorDark!important;
+		color: @errorDark!important;
 	}
 
 }
@@ -94,51 +127,48 @@ a.PageListPage:hover {
 			margin: 4px 0;
 		}
 	}
-	li.PageListPagination0:last-child{
+	.PageListPagination0:last-child{
 		background-position: -454px -72px;
 	}
-	li.PageListPaginationCurrent{
+	.PageListPaginationCurrent{
 		background: #fff!important;
 		a{
-			background: @gray;
+			background: @pink;
 			color: #fff;
 			opacity: 1!important;
 		}
 	}
 }
 
-.PageListItem:hover{
-	background: darken(@grayLighter, 4%);
-	border-color: darken(@grayLight, 8%);
-}
-
-.PageListStatusSystem a{
+// Page statuses 
+.PageListStatusHidden a{
 	color: @gray;
 }
+.PageListStatusSystem a{
+	color: @grayDark;
+}
+
 
 .PageListSortPlaceholder {
-	padding: 5px 0;
-	// line-height: 14px;
-	height: 12px;
-	background: #fff;
-	border: 3px dashed @grayDark;
-	.listItemSpacing();
+	height: 0!important;
+	padding: 0!important;
+	top: -1px;
+	position: relative;
+	margin: 0 0 -1px 0!important;
+	background: transparent!important;
+	border: none!important;
+	border-bottom: 1px dashed @grayDark!important;
 	width: auto!important;
 }
 
 .PageListPlaceholder{
 	overflow: hidden;
-	.listItemSpacing();
 	.PageListPlaceholderItem{
-		height: 12px;
-		.listItemSpacing();
-		border: 3px dashed @grayLight;
-		background: #fff;
+		border: none;
+		background: transparent;
 	}
 }
-.ui-sortable-helper{
-	.box-shadow(0 2px 9px rgba(0,0,0,.4));
-}
+
 .PageListSortItem{
 	cursor: move;
 }
@@ -146,32 +176,48 @@ a.PageListPage:hover {
 
 .PageListActionMore{
 	display: block!important;
-	background: @gray;
-	a{
-		margin: 0 0 12px 0;
-		padding: 4px;
-		display: block!important;
-		color: #fff;
-	}
-	a:hover{
-		background: @adminAccent;
-	}
+	border: none!important;
+	padding: 0 0 12px 0!important;
+
 }
-
-
 
 
 .PageListLoading{
-	background: @adminAccent url(../images/loading.gif) top left;
-	position: absolute;
-	top: -1px;
-	left: -1px;
-	height: 100%;
-	width: 0;
-	padding: 1px;
+	margin: 0 0.4em;
+	background: url(images/loading.gif) top center  no-repeat!important;
 }
-// #PageListContainer{
-// 	.PageListItem.PageListTemplate_home{
-// 		margin: 0 0 20px 0!important;
-// 	}
-// }
+
+
+.PageListItem{
+	padding: 0.8em 0 0.8em 2em!important;
+	background: url(images/icon_page_50.png) 0 center no-repeat;
+}
+.PageListItem.PageListItemOpen {
+	background-image: url(images/icon_page.png);
+}
+.PageListItem.PageListStatusSystem {
+	background-image: url(images/icon_menu.png);
+}
+.PageListItem.PageListStatusLocked {
+	background-image: url(images/icon_lock.png);
+}
+// home
+.PageListItem.PageListID1 {
+	background-image: url(images/icon_home.png);
+}
+// trash
+.PageListItem.PageListID7 {
+	background-image: url(images/icon_trash.png);
+}
+// admin/setup
+.PageListItem.PageListID22 {
+	background-image: url(images/icon_gear.png);
+}
+// admin/profile
+.PageListItem.PageListID304 {
+	background-image: url(images/icon_user.png);
+}
+// admin/access
+.PageListItem.PageListID28 {
+	background-image: url(images/icon_key.png);
+}

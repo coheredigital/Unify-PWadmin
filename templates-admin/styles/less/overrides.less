@@ -1,4 +1,5 @@
 .InputfieldHidden,
+#wrap_search_query,
 .InputfieldSubmit .ui-widget-header,
 .InputfieldPageAutocompleteNote br,
 .Inputfields > .InputfieldStateCollapsed .ui-widget-content,
@@ -7,49 +8,105 @@
 .InputfieldPageAutocompleteNote br{
 	display: none!important;
 }
-
-// save buttons
-#submit_save_unpublished,
-#Inputfield_submit,
-#submit_publish,
-#submit_save{
-	// float: right;
-}
-.ui-icon{
-	padding: 0!important;
+.InputfieldImage a.InputfieldFileMove span.ui-icon{
+	top: 0 !important;
 }
 
-// tinymce
-.mceLayout{
-	margin: 2px 0 14px 0!important;
+
+#header .ui-button{
+	float: right;
+	margin-top: 23px;
 }
 #debug .container{
 	padding: 0!important;
 }
 
-// .InputfieldPageListSelectMultiple ol{
-// 	margin: 0!important;
-// }
 
-.InputfieldPageListSelectMultiple ol,
-#debug .container{
-	padding-top: 0!important;
+// lightbox style fixes for consistency
+#fancy_title{
+	margin-top: -42px;
+	left: auto!important;
+	right: 26px;
+	#fancy_title_left,
+	#fancy_title_right{
+		display: none!important;
+	}
+	#fancy_title_main{
+		// border: 1px solid rgba(0,0,0,0.15);
+		padding: 0 12px;
+		background: #fff!important;
+		div{
+			color: #222!important;
+		}
+	}
 }
 
-.InputfieldPageListSelectMultiple ol{
-	margin-top: 0!important;
+#_ProcessPageEditView{
+	float: right;
+	margin: 0;
+	color: @grayDark;
+	background: @grayLighter;
+	border: 1px solid rgba(0,0,0,0.1)!important;
 }
-#view-site{
-	padding: 0 8px!important;
-}
-#view-site:after, #view-site:before{
-	display: none!important;
+#_ProcessPageEditView:hover{
+	background: @pink;
+	color: #fff;
 }
 
-// weird issues with list-style
-.WireTabs,
-#PageEditTabs.WireTabs li,
-#breadcrumbs li,
-#breadcrumbs{
-	list-style: none!important;
+#fieldgroupContext{
+	top: 25px !important;
+	right: 11px !important;
+	label{
+		text-transform: uppercase;
+		font-weight: bold;
+		color: @gray;
+	}
+}
+
+#ProcessPageSearchOptions{
+	input,
+	select{
+		width: 100%!important;
+	}
+	p{
+		margin-bottom: 1em;
+	}
+	p:last-child{
+		margin-bottom: 0;
+	}
+}
+.cke,
+.cke_reset{
+	.transition(box-shadow 0.4s);
+	.box-shadow(none) !important;
+	.cke_top,
+	.cke_bottom {
+		background: @grayLighter !important;
+		border-top: none !important;
+		.box-shadow(none) !important;
+	}
+	.cke_bottom {
+		border-top: 1px solid #ccc !important;
+	}
+	.cke_combo_button,
+	.cke_toolgroup{
+		.border-radius(0) !important;
+	}
+	.cke_combo_off:hover a.cke_combo_button,
+	.cke_button_off:hover{
+		background: #fff !important;
+		.box-shadow(0 0 4px #ccc) !important;
+	}
+	.cke_button_on,
+	.cke_combo_on a.cke_combo_button{
+		background: @blue !important;
+		.box-shadow(inset 0 0 3px rgba(0,0,0,0.2)) !important;
+		span{
+			opacity: 0.5;
+		}
+	}
+}
+.cke_focus.cke{
+	.box-shadow( 0 0 3px @blue ) !important;
+	border: 1px solid @blue !important;
 }

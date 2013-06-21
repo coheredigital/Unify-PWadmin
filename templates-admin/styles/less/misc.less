@@ -1,3 +1,21 @@
+//  clearfix
+.PageListSelectHeader{
+	.clearfix();
+}
+
+.container {
+.clearfix();
+}
+
+.logo{
+	margin: 4px 1em 4px 0;
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+
 .align_left {
 	float: left;
 	margin: 0 1em 0.5em 0;
@@ -7,21 +25,23 @@
 	float: right;
 	margin: 0 0 0.5em 1em;
 }
-
 .align_center {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
+
 .copy{
-	color: @adminAccentDarker;
+	font-weight: bold;
+	color: darken(@blueDarker, 3%);
 	a{
-		color: @adminAccentDarker;
+		color:  darken(@blueDarker, 3%);
 		&:hover{
 			color: @grayDark;
 		}
 	}
-	margin: 24px 0 0 0;
+	margin: 1.5em 0;
+	padding: 0;
 }
 .text_center{
 	text-align: center;
@@ -36,17 +56,21 @@
 
 #notices{
 	ul{
-		width: 100%
-		padding: 0;
+		width: 100%;
+		margin: 12px 0 0 0 !important;
+		padding: 0 !important;
 		list-style: none;
 		li{
 			.listItemSpacing();
-			padding: 6px 8px;
+			padding: 4px 6px;
 			border: 1px solid @gray;
+			font-weight: bold;
+			text-transform: uppercase;
 			&.success{
 				background: @success;
 				border-color: @successDark;
 				color: #fff;
+				font-size: 11px;
 				a{
 					color: darken(@successDark, 10%);
 					font-weight: bold;
@@ -85,7 +109,21 @@
 		margin: -2px 8px 0 0;
 	}
 }
+.notes{
+	margin: 1em 0 0 0;
+}
+td .notes{
+	margin-bottom: 0.6em;
+}
 
 .InputfieldMarkup .ui-state-highlight{
 	margin: 4px 0;
+}
+
+.InputfieldStateToggle.ui-widget-header{
+  text-shadow: 1px 1px 1px rgba(0,0,0,.2);
+}
+.ui-button:hover,
+.InputfieldFieldset .Inputfield  > .ui-widget-header:hover, .InputfieldFieldsetOpen .Inputfield > .ui-widget-header:hover{
+  text-shadow: 0 1px 1px rgba(0,0,0,.2)!important;
 }

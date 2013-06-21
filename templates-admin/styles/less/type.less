@@ -1,8 +1,20 @@
+html{
+	min-height: 100%;
+}
+body {
+	min-height: 100%;
+	background: @blue url('images/skyline.png') center bottom repeat-x;
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	font: 12px Arial, "Helvetica Neue", sans-serif;
+	color: #4f575c;
+}
+
 h1, h2, h3{
 	text-transform: uppercase;
 }
 h1 {
-	color: #fff;
+	color: @pink;
 	text-transform: uppercase;
 	font-size: 28px;
 	line-height: 53px;
@@ -27,23 +39,26 @@ p{
 	margin: 0;
 	font-size: 12px;
 }
-p.description{
-	padding: 2px 0 8px 0;
+.description{
+	padding: 2px 0 0.8em 0;
+	// font-style: italic;
+	// font-weight: bold;
+	color: @gray;
+	display: block;
+	font-size: 12px;
 }
-p.copy{
-	padding: 24px 0 8px 0;
-}
+
 a {
-	color: @adminAccent;
+	color: @blue;
 	text-decoration: none;
 	&:hover {
-		color: @adminAccentDark;
+		color: @pink;
 	}
 }
 
 ul, ol{
 	padding: 8px 0 0 0;
-	
+
 	list-style: none;
 	li{
 		padding: 0;
@@ -53,15 +68,17 @@ dl{
 	dt{
 		a.label{
 			font-weight: bold;
-			border-bottom: 1px solid #ddd;
+			border-bottom: 1px solid @grayLighter;
 			display: block;
 			padding: 0 0 4px 0;
-			margin: 0 0 4px 0;
+			margin: 0;
+			font-size: 16px;
 		}
 	}
 	dd{
-		padding: 2px 0  8px 0;
-		margin: 0 0  12px 0;
+		border-top: 1px solid #fff;
+		padding: 6px 0  8px 0;
+		margin: 0 0  16px 0;
 	}
 }
 table.AdminDataTable{
@@ -104,6 +121,14 @@ table.AdminDataTable{
 	}
 	tr:hover td{
 		background: #fff;
-		border-bottom: 1px solid @adminAccent;
+		// border-bottom: 1px solid @blue;
 	}
+}
+
+.InputfieldMapMarker .detail{
+	font-family: "courier-new", monospace;
+	padding-bottom: 4px !important;
+	display: block;
+	color: @gray;
+	font-size: 11px;
 }
