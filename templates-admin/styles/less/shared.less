@@ -1,0 +1,25 @@
+//  clearfix
+.PageListSelectHeader{
+	.clearfix();
+}
+
+.clearfix, .container {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.InputfieldStateToggle.ui-widget-header{
+  text-shadow: 1px 1px 1px rgba(0,0,0,.2);
+}
+.ui-button:hover,
+.InputfieldFieldset .Inputfield  > .ui-widget-header:hover, .InputfieldFieldsetOpen .Inputfield > .ui-widget-header:hover{
+  text-shadow: 1px 1px 1px rgba(0,0,0,.2)!important;
+}

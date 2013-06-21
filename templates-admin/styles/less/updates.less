@@ -1,0 +1,81 @@
+#updates{
+	.transition(all .6s ease-in-out);
+	bottom: auto;
+	position: fixed;
+	overflow: hidden;
+	top: 100%;
+	height: 100%;
+	background: darken(@grayDark, 2%);
+	margin: -25px 0 0 0;
+	padding: 0;
+	border-right: 0;
+	border-left: 0;
+	width: 250px;
+	z-index: 500;
+	a.ui-button{
+		padding: 4px 0;
+
+		border-right: 0;
+		border-left: 0;
+		width: 250px;
+		color: #fff!important;
+		top: 0;
+		height: 15px;
+		&.ui-state-default{
+			border-color: darken(@grayDark, 6%);
+			background: darken(@grayDark, 4%);
+		}
+		&.ui-state-default:hover{
+			background: @adminAccent!important;
+			border-color: @adminAccentDark!important;
+		}
+	}
+	.close{
+		display: none;
+	}
+
+
+
+}
+ul.changes{
+	width: 200px;
+	margin: 5px 0 0 14px;
+	padding: 0 0 20px 0;
+	overflow: hidden;
+	li{
+		
+		margin: 0 0 6px 0;
+		line-height: 12px;
+		.text-overflow();
+		a{
+			color: #fff!important;
+			
+		}
+		a:hover{
+			color:  @adminAccent!important;
+			
+		}
+	}
+	.details{
+		font-size: 10px;
+		color: @gray;
+		text-transform: uppercase;
+	}
+}
+
+#updates.open{
+	top: 0;
+	overflow: scroll;
+	overflow-x:hidden;
+	margin: 0;
+	.open{
+		display: none;
+	}	
+	.close{
+		display: block;
+	}
+}
+
+.info h3{
+	margin: 0 14px 8px;
+}

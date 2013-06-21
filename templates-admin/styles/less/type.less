@@ -1,0 +1,109 @@
+h1, h2, h3{
+	text-transform: uppercase;
+}
+h1 {
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 28px;
+	line-height: 53px;
+	// font-family: "Arial Black", arial, sans-serif;
+	font-weight: 900;
+	margin: 14px 0 12px 0;
+}
+h2{
+	color: #aaa;
+	// font-weight: normal;
+	font-size: 22px;
+	line-height: 26px;
+	margin: 14px 0;
+
+}
+h3{
+	font-size: 16px;
+	padding: 7px 0 5px;
+	margin: 0 0 12px 0;
+}
+p{
+	margin: 0;
+	font-size: 12px;
+}
+p.description{
+	padding: 2px 0 8px 0;
+}
+p.copy{
+	padding: 24px 0 8px 0;
+}
+a {
+	color: @adminAccent;
+	text-decoration: none;
+	&:hover {
+		color: @adminAccentDark;
+	}
+}
+
+ul, ol{
+	padding: 8px 0 0 0;
+	
+	list-style: none;
+	li{
+		padding: 0;
+	}
+}
+dl{
+	dt{
+		a.label{
+			font-weight: bold;
+			border-bottom: 1px solid #ddd;
+			display: block;
+			padding: 0 0 4px 0;
+			margin: 0 0 4px 0;
+		}
+	}
+	dd{
+		padding: 2px 0  8px 0;
+		margin: 0 0  12px 0;
+	}
+}
+table.AdminDataTable{
+	width: 100%;
+	border-collapse:collapse;
+	margin: 0 0 12px 0;
+	// border-left: 1px solid @grayLight;
+	// border-right: 1px solid @grayLight;
+	tr{
+
+		th, td{
+			padding: 4px 8px;
+
+			line-height: 21px;
+			vertical-align: middle;
+			text-align: left;
+
+			button{
+				float: inline-block;
+			}
+		}
+		th{
+			font-size: 13px;
+			background: #fff;
+			text-transform: uppercase;
+		}
+		th, td{
+
+			border: 1px solid @grayLight;
+			// border-right: 0;
+		}
+		td{
+
+			border: 1px dotted @grayLight;
+		}
+		th:first-child, th:first-child{
+			// border-left: 0;
+		}
+
+	}
+	tr:hover td{
+		background: #fff;
+		border-bottom: 1px solid @adminAccent;
+	}
+}

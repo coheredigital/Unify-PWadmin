@@ -1,0 +1,91 @@
+.align_left {
+	float: left;
+	margin: 0 1em 0.5em 0;
+}
+
+.align_right {
+	float: right;
+	margin: 0 0 0.5em 1em;
+}
+
+.align_center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.copy{
+	color: @adminAccentDarker;
+	a{
+		color: @adminAccentDarker;
+		&:hover{
+			color: @grayDark;
+		}
+	}
+	margin: 24px 0 0 0;
+}
+.text_center{
+	text-align: center;
+}
+
+.fright{
+	float: right;
+}
+.fleft{
+	float: left;
+}
+
+#notices{
+	ul{
+		width: 100%
+		padding: 0;
+		list-style: none;
+		li{
+			.listItemSpacing();
+			padding: 6px 8px;
+			border: 1px solid @gray;
+			&.success{
+				background: @success;
+				border-color: @successDark;
+				color: #fff;
+				a{
+					color: darken(@successDark, 10%);
+					font-weight: bold;
+				}
+			}
+			&.error{
+				background: @error;
+				border-color: @errorDark;
+
+				color: #fff;
+				a{
+					color: darken(@errorDark, 10%);
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}
+
+
+
+.InputfieldMarkup .ui-state-highlight,
+.notes{
+	padding: 8px 8px;
+	display: block;
+	margin: 4px 0 12px 0;
+	border: 0;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 11px;
+	color: @grayDark;
+	background: @noticeLight;
+	border: 1px solid @notice;
+	.ui-icon{
+		float: left;
+		margin: -2px 8px 0 0;
+	}
+}
+
+.InputfieldMarkup .ui-state-highlight{
+	margin: 4px 0;
+}

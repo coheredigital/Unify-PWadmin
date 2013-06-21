@@ -1,0 +1,128 @@
+&.login{
+	background: @adminAccent;
+	#notices{
+		left: 0;
+		right: 0;
+		top: 0;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		ul{
+			background: transparent;
+			margin: 0;
+			border: none;
+			li{
+				display: block;
+				border: none;
+				text-align: center;
+				color: @adminAccent;
+				text-transform: uppercase;
+				font-size: 11px;
+				font-weight: bold;
+			}
+		}
+	}
+	#login{
+		background: @grayDark;
+		position: fixed;
+		top: 50%;
+		left: 0;
+		right: 0;
+		padding: 40px;
+		margin: -185px 0 0 0;
+		p{
+			display: none;
+		}
+		#logo{
+			top: 50%;
+			float: none;
+			left: 32px;
+			height: 46px;
+			position: absolute;
+			// z-index: -1; why?
+			margin: -25px 0 0 0;
+			width: 300px;
+			img{
+				display: block;
+				margin: 0 auto;
+			}
+		}
+		div{
+			text-align: right;
+			position: relative;
+			height: auto;
+			vertical-align: bottom;
+			clear: none!important;
+			.ui-icon{
+				display: none;
+			}
+			a{
+				color: #555;
+				text-transform: uppercase;
+				font-size: 11px;
+				font-weight: bold;
+			}
+			a:hover{
+				color: @adminAccent;
+			}
+		}
+		> div{
+			float: right;
+			margin: 6px 0 0 16px;
+			position: absolute;
+			bottom: 24px;
+			right: 48px;
+		}
+		#ProcessLoginForm{
+			overflow: hidden;
+			width: 400px;
+			position: relative;
+			margin: 0;
+			float: right;
+			li.Inputfield {
+				background: transparent;
+				width: 100%;
+				padding: 0;
+				.box-shadow(none);
+				input{
+					margin: 0;
+					padding: 12px;
+				}
+			}
+			li.Inputfield.InputfieldSubmit{
+				float: none;
+				clear: both;
+				width: auto;
+				padding-top: 4px;
+				.ui-widget-content{
+					width: auto;
+					float: none;
+				}
+			}
+			.ui-widget-content,.ui-widget-header{
+				border: none;
+				color: @gray;
+
+				padding: 8px;
+				padding-bottom: 0;
+				background: transparent;
+				.ui-icon{
+					display: none;
+				}
+			}
+			.ui-widget-header{
+				// padding-top: 0;
+				font-size: 11px;
+				text-transform: uppercase;
+			}
+			#Inputfield_submit{
+				margin: 0;
+				width: 120px;
+				padding: 12px;
+				text-align: right;
+			}
+		}
+	}
+
+}
+

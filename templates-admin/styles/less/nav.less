@@ -1,0 +1,110 @@
+
+ul#nav {
+	background: #111;
+	list-style: none;
+	margin: 0;
+	z-index: 10;
+	padding: 0;
+	ul{padding: 0;}
+	li{
+		margin: 0;
+		padding: 0;
+		position: relative;
+		height: 32px;
+		line-height: 32px;
+		text-transform: uppercase;
+		display: inline-block;
+		a {
+			display: inline-block;
+			border: none!important;
+			padding: 0 10px;
+			margin: 0 8px 0 0;
+			height: 32px;
+			line-height: 32px;
+			font-size: 12px;
+			color: #888;
+
+			font-weight: bold;
+		}
+		a:hover {
+			color: #eee;
+		}
+		a.active, a.active:hover {
+			// .gradientActive();
+			background:  @adminAccent;
+			position: relative;
+			z-index: 10;
+			color: #fff;
+
+		}
+		&.fright a{
+			margin: 0 0 0 8px;
+		}
+	}
+
+	.search, .changes{
+		float: right;
+	}
+}
+ul.subpages{
+	display: none;
+	top: 100%;
+	left: 0px;
+	width: 1;
+	background: #fff;
+	padding: 2px 0!important;
+	z-index: 1000!important;
+	position: absolute;
+	.box-shadow( 0 0 5px rgba(0,0,0,.3) );
+	li{
+		background: #fff!important;
+	}
+	li, li a{
+		display: block!important;
+		width: auto;
+		.transition( all .4s);
+	}
+	a{
+		white-space:nowrap;
+		border: none!important;
+		padding: 0 9px!important;
+	}
+	a:hover{
+		color: @adminAccent!important;
+	}
+	a.active, a.active:hover {
+		background: transparent!important;
+		color: @adminAccent!important;
+		.box-shadow( none );
+	}
+}
+ul#nav li:hover ul.subpages{
+	display: block;
+}
+
+
+	input#ProcessPageSearchQuery{
+		margin: 22px 0 0 0;
+		float: right;
+		height: 21px;
+		line-height: 21px;
+		.box-shadow( inset 0 0 3px #000 );
+		outline: none;
+		border-color: #111;
+		padding: 4px 12px;
+		width: 192px;
+		text-align: right;
+		opacity: 1!important;
+		color: @gray;
+		background: #111;
+	}
+	input#ProcessPageSearchQuery:focus{
+		border-color: @adminAccent;
+		color: @grayDark;
+		background: #fff;
+		.box-shadow( 0 0 3px @adminAccent );
+	}
+
+.search.active .searchform{
+	display: block;
+}

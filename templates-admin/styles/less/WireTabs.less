@@ -1,0 +1,52 @@
+.WireTabs {
+	left: 0;
+	margin: 0 0 20px 0;
+	list-style: none;
+	overflow: hidden;
+	padding: 13px 10px;
+		border: 1px solid @grayLight;
+		background: #fff;
+	.box-shadow( 0 0 5px @grayLighter );
+	li {
+		padding: 0;
+		display: block!important;
+		a{
+		    color: #999;
+		   	border: 1px solid transparent;
+			line-height: 30px;
+		   	padding: 0 8px;
+		   	display: block!important;
+		   	float: left;
+		   	margin: 0 8px 0 0;
+		    font-weight: bold;
+		    text-transform: uppercase;
+		}
+		a:hover {
+		    color: @grayDark;
+		}
+		a.on:hover, a.on {
+			background: @adminAccent;
+			border-color: @adminAccentDark;
+			color: #fff;
+		}
+	}
+	button{
+		float: right;
+		margin: 0!important;
+	}
+}
+.fixedNav{
+	.WireTabs{
+		position: fixed;
+		left: 0;
+		right: 0;
+		z-index: 100;
+		background: #fff;
+		.box-shadow(0 0 6px @grayLight);
+		max-width: 1200px;
+		width: auto;
+		// padding: 8px;
+		margin: 0 auto;
+		top: -1px;
+	}
+}

@@ -1,0 +1,27 @@
+.grayInset{
+    background: #ccc!important;
+    .box-shadow( inset 0 0 2px #888 );
+    text-shadow: 0 0 2px #888;
+    color: #fff;
+}
+.listItemSpacing{
+	margin: 0 0 6px 0!important;
+}
+.gradientBase{
+	color: @grayDark;
+	border: 1px solid #DDD;
+	.gradientV(#fcfcfc, #f3f3f3);
+}
+.gradientActive{
+	color: #fff;
+	.gradientV(@adminAccent, @adminAccentDark);
+	border: 1px solid darken(@adminAccent, 5%);
+	border-bottom: 1px solid darken(@adminAccentDark, 5%);
+}
+
+.gradientDark{
+	color: #fff;
+	.gradientV(@grayDark, darken(@grayDark, 10%));
+	border: 1px solid darken(@grayDark, 5%);
+	border-bottom: 1px solid darken(@grayDark, 12%);
+}

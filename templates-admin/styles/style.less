@@ -1,0 +1,48 @@
+@import "less/vars.less";
+@import "less/mixins.less";
+@import "jqueryui/jqui.less";
+@import "less/snippets.less";
+body {
+	background: @adminAccent;
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	font: 12px Arial, "Helvetica Neue", sans-serif;
+	color: #4f575c;
+}
+@import "less/type.less";
+// FIXED
+#sidebar,
+#copyright {
+	position: fixed;
+}
+.container,
+.WireFatalError,
+#content,
+#nav,
+#bread,
+#notices{
+	position: relative;
+}
+@import "less/modal.less";
+#metro_pw{
+	
+	@import "less/shared.less";
+	@import "less/ui.less";
+
+	@import "less/forms.less";
+	@import "less/ui-button.less";
+	@import "less/layout.less";
+	@import "less/nav.less";
+	@import "less/WireTabs.less";
+	@import "less/breadcrumbs.less";
+	@import "less/misc.less";
+	@import "less/MarkupPagerNav.less";
+	@import "less/InputFields.less";
+	@import "less/pageList.less";
+	@import "less/asmList.less";
+	@import "less/ui-autocomplete.less";
+	@import "less/ui-slider.less";
+	@import "less/ui-dialog.less";
+	@import "less/login.less";
+	@import "less/overrides.less";
+}

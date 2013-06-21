@@ -1,0 +1,31 @@
+@import "less/vars.less";
+@import "less/mixins.less";
+@import "jqueryui/jqui.less";
+@import "less/snippets.less";
+
+
+#metro_pw{
+	#breadcrumbs {
+		
+		li {
+			display: inline-block;
+			a {
+				padding: 0 8px;
+				border-right: 1px solid @grayLight;
+				&:after, &:before {
+					display: none;
+				}
+			}
+			a:first-child{
+				border-left: 1px solid @grayLight;
+			}
+		}
+	}
+
+	ul.subpages{
+		border: 1px solid @grayLight;
+	}
+	select{
+		padding: 5px 0;
+	}
+}

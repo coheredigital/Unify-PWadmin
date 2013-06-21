@@ -1,0 +1,177 @@
+a.PageListPage,
+a.PageListPage:hover {
+	font-weight: bold;
+	color: @adminAccent;
+	background: transparent;
+}
+a.PageListPage:hover {
+	color: @adminAccentDark;
+}
+
+
+.PageListRoot{
+	.clearfix();
+	// > .PageList, > .PageList > .PageList {
+	// 	margin-left: 0;
+	// 	padding-left: 0;
+	// }
+
+
+	.PageListItem {
+		background: @grayLighter;
+		line-height: 26px;
+		border: 1px solid @grayLight;
+		.listItemSpacing();
+		position: relative;
+		padding: 0 8px;
+		.PageListNumChildren{
+			float: right;
+			font-weight: bold;
+		}
+		&.PageListStatusUnpublished a{
+ 			color: @gray;
+ 		}
+		.PageListActions {
+			margin-left:3px;
+			li{
+				border-color: @adminAccentDark;
+				a {
+				    padding: 3px 6px;
+				    // color: #fff;
+				    color: #222;
+				    text-transform: uppercase;
+				    font-size: 11px;
+				    font-weight: bold;
+				}
+				a:hover{
+					color: #222;
+				}
+
+			}
+
+		}
+		&.PageListItemOpen, &.PageListSortItem{
+			background: @adminAccent;
+			border-color: @adminAccentDark;
+			.PageListPage{
+				color: #fff!important;
+			}
+		}
+	}
+
+
+}
+.PageListPagination,
+.PageList{
+	position: relative;
+}
+
+.PageListMoveNote{
+	color: @grayDark;
+	a{ // this should always be the cancel link I believe...
+		color: #fff;
+		text-transform: uppercase;
+		background: @error;
+		position: absolute;
+		font-weight: bold;
+		border: 1px solid @errorDark!important;
+		right: -1px;
+		top: -1px;
+		bottom: -1px;
+		padding: 0 8px;
+	}	
+	a:hover{ // this should always be the cancel link I believe...
+		background: @errorDark!important;
+	}
+
+}
+.PageListPagination{
+	padding: 5px 0 8px 0;
+	li{
+		a{
+			background: transparent;
+			padding: 3px 8px;
+			margin: 4px 0;
+		}
+	}
+	li.PageListPagination0:last-child{
+		background-position: -454px -72px;
+	}
+	li.PageListPaginationCurrent{
+		background: #fff!important;
+		a{
+			background: @gray;
+			color: #fff;
+			opacity: 1!important;
+		}
+	}
+}
+
+.PageListItem:hover{
+	background: darken(@grayLighter, 4%);
+	border-color: darken(@grayLight, 8%);
+}
+
+.PageListStatusSystem a{
+	color: @gray;
+}
+
+.PageListSortPlaceholder {
+	padding: 5px 0;
+	// line-height: 14px;
+	height: 12px;
+	background: #fff;
+	border: 3px dashed @grayDark;
+	.listItemSpacing();
+	width: auto!important;
+}
+
+.PageListPlaceholder{
+	overflow: hidden;
+	.listItemSpacing();
+	.PageListPlaceholderItem{
+		height: 12px;
+		.listItemSpacing();
+		border: 3px dashed @grayLight;
+		background: #fff;
+	}
+}
+.ui-sortable-helper{
+	.box-shadow(0 2px 9px rgba(0,0,0,.4));
+}
+.PageListSortItem{
+	cursor: move;
+}
+
+
+.PageListActionMore{
+	display: block!important;
+	background: @gray;
+	a{
+		margin: 0 0 12px 0;
+		padding: 4px;
+		display: block!important;
+		color: #fff;
+	}
+	a:hover{
+		background: @adminAccent;
+	}
+}
+
+
+
+
+.PageListLoading{
+	background: @adminAccent url(../images/loading.gif) top left;
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	height: 100%;
+	width: 0;
+	padding: 1px;
+}
+// #PageListContainer{
+// 	.PageListItem.PageListTemplate_home{
+// 		margin: 0 0 20px 0!important;
+// 	}
+// }

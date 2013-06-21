@@ -1,0 +1,68 @@
+.ui-button{
+	// border: 0;
+	margin: 0;
+	padding: 6px 12px;
+	text-transform: uppercase;
+	// text-shadow: 1px 1px 1px rgba(0,0,0,.2);
+	// border-width: 1px !important;
+	// border-style: solid!important;
+	// border-color: @adminAccentDark;
+	-webkit-font-smoothing: antialiased;
+}.ui-button:hover{
+	background: @adminAccent;
+	border-color: @adminAccentDark;
+	color: #fff;
+}
+
+.ui-button#submit_save,
+.ui-button#Inputfield_submit,
+.ui-button#submit_publish{
+	background: @success;
+	border-color: @successDark;
+	color: #fff;
+	text-transform: uppercase;
+}
+.ui-button#submit_save:hover,
+.ui-button#Inputfield_submit:hover,
+.ui-button#submit_publish:hover{
+	background: @successDark;
+	border-color: @successDarker;
+}
+
+.error-text,
+#_ProcessPageEditDelete,
+&.InputfieldStateRequired label,
+.PageListActionEmpty a,
+#_WireTabDelete{
+	color: @error!important;
+}
+#_ProcessPageEditDelete:hover,
+.PageListActionEmpty a:hover,
+#_WireTabDelete:hover{
+	color: @errorDark!important;
+}
+a.on#_ProcessPageEditDelete,
+a.on#_WireTabDelete,
+.InputfieldRepeaterDeletePending .ui-widget-header,
+.Inputfields .ui-widget-header.ui-state-error{
+	color: @errorDark!important;
+	background: @error;
+	border-color: @errorDark;
+}
+
+.InputfieldPageAddButton{
+	.clearfix();
+	padding: 0 0 12px!important;
+	a{
+		text-transform: uppercase;
+		float: right;
+		.ui-button();
+		.ui-state-default();
+	}
+	.ui-icon{
+		display: none!important;
+	}
+}
+.InputfieldPageAddButton a:hover{
+	.ui-state-hover();
+}
