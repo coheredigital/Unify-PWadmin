@@ -34,6 +34,7 @@ img{
 .copy{
 	font-weight: bold;
 	color: @blueDarker;
+	text-shadow: 1px 1px 1px @blueLighter;
 	a{
 		color:  darken(@blueDarker, 3%);
 		&:hover{
@@ -131,10 +132,10 @@ td .notes{
 	.box-shadow(0 1px 2px @blueDark);
 	display: inline-block;
 	vertical-align: middle;
-	// padding: 4px;
+	padding: 2px;
 	margin-right: 1em ;
-	height: 50px;
-	width: 50px;
+	height: 48px;
+	width: 48px;
 	background: #fff;
 }
 .user-menu{
@@ -149,12 +150,18 @@ td .notes{
 	// text-shadow: 0 0 4px @blueDark;
 	a:hover{
 		color: @grayDark !important;
+
 	}
 }
 .user-name{
 	color: #fff;
+	text-shadow: 0 1px 1px @blueDark;
+	&:hover{
+		text-shadow: 1px 1px 1px @blueLighter;
+	}
 }
 .user-logout{
 	color: @blueDarker;
 	font-size: 12px;
+	text-shadow: 1px 1px 1px @blueLighter;
 }

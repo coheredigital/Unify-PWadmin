@@ -1,7 +1,7 @@
 .nav-wrap{
 	background: @grayLightest;
 }
-ul#nav {
+#nav {
 	border-left: 1px solid @grayLighter;
 	border-right: 1px solid #fff;
 	list-style: none;
@@ -32,15 +32,17 @@ ul#nav {
 			color: #888;
 			border-left: 1px solid #fff;
 			border-right: 1px solid @grayLighter;
+			text-shadow: 1px 1px 1px #fff;
 			font-weight: bold;
 		}
 		a:hover {
 			color: @blueDark;
 		}
-		a.on, a.on:hover {
+		a.on {
 			background:  @pink;
 			color: #fff;
-			border-color: @pink;
+			border-color: @pinkDark;
+			text-shadow: 1px 1px 1px @pinkDark;
 		}
 		&.fright a{
 			margin: 0 0 0 8px;
@@ -56,7 +58,7 @@ ul#nav {
 
 
 
-.subnav{
+#nav .subnav{
 	visibility: none;
 	.transition(all 0.4s);
 	.transition-delay(0.3s);
@@ -74,21 +76,23 @@ ul#nav {
 			color: lighten(@gray, 12%) !important;
 			float: none !important;
 			border: none !important;
-			padding: 0;
+			// padding: 0;
 			.transition(all 0.8s );
 			margin-bottom: 4px !important;
 			white-space: nowrap;
 			line-height: 24px !important;
 			height: auto !important;
 			width: auto;
+			text-shadow: none;
 			&:hover{
 				color: #fff !important;
 				background: @blue;
 				.transition(all 0.2s);
+				text-shadow: 1px 1px 1px @blueDark;
 			}
 			&.on{
 				color: #fff !important;
-				// background: transparent !important;
+				text-shadow: 1px 1px 1px @pinkDark;
 			}
 		}
 	}
