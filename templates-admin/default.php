@@ -108,13 +108,19 @@ $config->scripts->append($config->urls->adminTemplates . "scripts/jquery.collage
 	<div id="footer">
 		<div id="skyline"></div>
 		<div class="container">
-			<div class="fleft">
+			<div id="user-menu" class="fleft">
 				
 				<?php include("_gravatar.inc") ?>
-				
-					
+				<?php $gravatar = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $user->email ) ) ) . "?d=mm&s=50"; ?>
+				<?php if ($gravatar): ?>
+					<?php $edit = __("Edit Profile"); ?>
+					<?php if ($user->hasPermission('profile-edit')) echo "<a title='{$edit}' class='tooltip' href='{$config->urls->admin}profile/'>" ?>
+					<img class="gravatar" src="<?php echo $gravatar; ?>" alt="">
+					<?php if ($user->hasPermission('profile-edit')) echo "</a>" ?>
+				<?php endif ?>
+									
 				<div class="user-menu">
-					<?php if ($user->hasPermission('profile-edit')) echo "<a class='user-name' href='{$config->urls->admin}profile/'>{$user->name}</a>" ?><br>
+					<?php if ($user->hasPermission('profile-edit')) echo "<a title='{$edit}' class='user-name tooltip' href='{$config->urls->admin}profile/'>{$user->name}</a>" ?><br>
 					<a class="user-logout" href='<?php echo $config->urls->admin; ?>login/logout/'><?php echo __('logout', __FILE__); ?></a>
 				</div>
 			</div>

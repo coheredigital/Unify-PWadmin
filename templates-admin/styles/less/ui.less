@@ -12,6 +12,7 @@
 }
 .ui-tooltip {
 	z-index: 100;
+    margin: 0 -6px 0 6px !important;
 	border: none;
 	padding: 0.6em 1em;
 	background: @grayDark;
@@ -21,13 +22,14 @@
     text-transform: uppercase;
     font-weight: bold;
     font-size: 11px !important;
+
 }
 .ui-tooltip:before {
     content: "";
     position: absolute!important;
     left: 50%;
     top: 100%;
-    margin: 0 0 0 -6px;
+    margin: 0 0 0 -5px;
     width: 0;
     z-index: 0;
 
@@ -36,7 +38,16 @@
     border-width: 6px 6px 0 6px;
     border-color: @grayDark transparent transparent transparent;
 }
+.tooltip{
+    background-color: transparent !important;
+    .ui-icon{
+        background-color: transparent !important;
+        background-image: url(jqueryui/images/ui-icons.png)!important;
+        
 
+    }
+
+}
 
 // SLIDER
 
