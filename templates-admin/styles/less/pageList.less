@@ -27,10 +27,12 @@ a.PageListPage:hover {
 		}
 	.PageListActions {
 		margin-left:3px;
+		// display: inline!important;
+		// opacity: 0.2;
 		li{
 			border: none;
 		}
-
+	
 	}
 
 	&.ui-sortable-helper{
@@ -41,6 +43,13 @@ a.PageListPage:hover {
 		width: 98%!important;
 	}
 }
+// .PageListItem:hover {
+// 	.PageListActions {
+// 		display: inline !important;
+// 		opacity: 1;
+// 	}
+// }
+
 
 
 .PageListSelectHeader{
@@ -62,7 +71,6 @@ a.PageListPage:hover {
 		display: none!important;
 	}
 }
-
 
 
 
@@ -160,18 +168,44 @@ a.PageListPage:hover {
 	border-bottom: 1px dashed @grayDark!important;
 	width: auto!important;
 }
-
-.PageListPlaceholder{
-	overflow: hidden;
-	.PageListPlaceholderItem{
-		border: none;
-		background: transparent;
-	}
+.PageListSortPlaceholder:before {
+	content : "";
+	width: 0px !important;
+	position: absolute;
+	left: -3px;
+	top: -5px;
+	padding: 0;
+	height: 0px !important 	;
+	border-style: solid;
+	border-width: 6px 0 6px 8px;
+	border-color: transparent transparent transparent @blue;
 }
 
-.PageListSortItem{
-	cursor: move;
+.PageListSortPlaceholder:after {
+	content : "";
+	width: 8px !important;
+	height: 4px !important ;
+	background: @blue;
+	position: absolute;
+	left: -8px;
+	top: -1px;
+	padding: 0;
 }
+
+ .PageListPlaceholder{
+	// overflow: hidden;
+ 	.PageListPlaceholderItem{
+		border: 1px dashed @grayLight !important;
+		background-color: @grayLighter;
+		height: 12px !important;
+		padding: 0 !important;
+		margin: 6px 0 !important;
+ 	}
+ }
+
+// .PageListPlaceholder:last-child > .PageListPlaceholderItem{
+// 	height: 24px !important;
+// }
 
 
 .PageListActionMore{
@@ -191,6 +225,7 @@ a.PageListPage:hover {
 .PageListItem{
 	padding: 0.8em 0 0.8em 2em!important;
 	background: url(images/icon_page_50.png) 0 center no-repeat;
+	background-repeat: no-repeat !important;
 }
 .PageListItem.PageListItemOpen {
 	background-image: url(images/icon_page.png);

@@ -62,63 +62,69 @@ $config->scripts->append($config->urls->adminTemplates . "scripts/jquery.collage
 <?php else: ?>
 
 
-<body id="branded" <?php if($bodyClass) echo " class='$bodyClass'"; ?> >
-	<div class="nav-wrap">
-		<div class="container">
-			<?php echo $searchForm; ?>
-			<img width="170" class="fleft logo" src="<?php echo $config->urls->adminTemplates ?>styles/images/logo.png">
-			<?php include("topnav.inc"); ?>
+<body <?php if($bodyClass) echo " class='$bodyClass'"; ?> >
+	<div id="wrapper">
+		<div class="nav-wrap">
+			<div class="container">
+				<?php echo $searchForm; ?>
+				<img width="170" class="fleft logo" src="<?php echo $config->urls->adminTemplates ?>styles/images/logo.png">
+				<?php include("topnav.inc"); ?>
+			</div>
+
 		</div>
-
-	</div>
-	<div id="header">
-		<div class="container">
-			<h1><?php echo strip_tags($this->fuel->processHeadline ? $this->fuel->processHeadline : $page->get("title|name")); ?></h1>
-	    	<?php if(trim($page->summary)) echo "<h2>{$page->summary}</h2>"; ?>
+		<div id="header">
+			<div class="container">
+				<h1><?php echo strip_tags($this->fuel->processHeadline ? $this->fuel->processHeadline : $page->get("title|name")); ?></h1>
+		    	<?php if(trim($page->summary)) echo "<h2>{$page->summary}</h2>"; ?>
+			</div>
 		</div>
-	</div>
-	<div id="bread">
-		<div class="container">
-			<ul id="breadcrumbs">
-			<?php
-				foreach($this->fuel('breadcrumbs') as $breadcrumb) {
-					$class = strpos($page->path, $breadcrumb->path) === 0 ? " class='active'" : '';
-					$title = htmlspecialchars(strip_tags($breadcrumb->title));
-					echo "<li $class><a href='{$breadcrumb->url}'>{$title}</a></li>";
-				}
-			?>
-			<li class="fright"><a target="_blank" id="view-site" href="<?php echo $config->urls->root; ?>">View Site</a></li>
-			<li class="fright"><a href='<?php echo $config->urls->admin; ?>login/logout/'>Logout</a></li>
-			<li class="fright">
-
-				<?php if ($user->hasPermission('profile-edit')): ?>
-					<a class='action' href='<?php echo $config->urls->admin; ?>profile/'><?php echo $user->name; ?></a>
-				<?php endif ?>
-
-			</li>
-
-			</ul>
+		<div id="bread">
+			<div class="container">
+				<ul id="breadcrumbs">
+				<?php
+					foreach($this->fuel('breadcrumbs') as $breadcrumb) {
+						$class = strpos($page->path, $breadcrumb->path) === 0 ? " class='active'" : '';
+						$title = htmlspecialchars(strip_tags($breadcrumb->title));
+						echo "<li $class><a href='{$breadcrumb->url}'>{$title}</a></li>";
+					}
+				?>
+				<li class="fright"><a target="_blank" id="view-site" href="<?php echo $config->urls->root; ?>">View Site</a></li>
+				</ul>
+			</div>
 		</div>
-	</div>
-	<div id="main">
-		<div class="container">
-			<?php if(count($notices)) include("notices.inc"); ?>
-		    <div id="content" class="fouc_fix">
-				<div class="container">
-					<?php if($page->body) echo $page->body; ?>
-					<?php echo $content?>
-					<?php if($config->debug && $this->user->isSuperuser()) include($config->paths->adminTemplates . "debug.inc"); ?>
+		<div id="main">
+			<div class="container">
+				<?php if(count($notices)) include("notices.inc"); ?>
+			    <div id="content" class="fouc_fix">
+					<div class="container">
+						<?php if($page->body) echo $page->body; ?>
+						<?php echo $content?>
+						<?php if($config->debug && $this->user->isSuperuser()) include($config->paths->adminTemplates . "debug.inc"); ?>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
 	<div id="footer">
+		<div id="skyline"></div>
 		<div class="container">
-
-
-		</div>
-		<div class="container">
+			<div class="fleft">
+				
+				<?php $gravatar = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $user->email ) ) ) . "?d=mm&s=50"; ?>
+				<?php if ($gravatar): ?>
+					<?php if ($user->hasPermission('profile-edit')) echo "<a class='user-name' href='{$config->urls->admin}profile/'>" ?>
+					<img class="gravatar" src="<?php echo $gravatar; ?>" alt="">
+					<?php if ($user->hasPermission('profile-edit')) echo "</a>" ?>
+					
+				<?php endif ?>
+				
+					
+				<div class="user-menu">
+					<?php if ($user->hasPermission('profile-edit')) echo "<a class='user-name' href='{$config->urls->admin}profile/'>{$user->name}</a>" ?><br>
+					<a class="user-logout" href='<?php echo $config->urls->admin; ?>login/logout/'><?php echo __('logout', __FILE__); ?></a>
+				</div>
+			</div>
+			
 			<p class="copy fright"><a href="http://processwire.com/">ProcessWire</a> <?php echo $config->version; ?> - Copyright &copy; <?php echo date("Y"); ?> by Ryan Cramer</p>
 		</div>
 	</div>

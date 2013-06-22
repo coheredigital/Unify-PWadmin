@@ -33,11 +33,11 @@ img{
 
 .copy{
 	font-weight: bold;
-	color: darken(@blueDarker, 3%);
+	color: @blueDarker;
 	a{
 		color:  darken(@blueDarker, 3%);
 		&:hover{
-			color: @grayDark;
+			color: @pink;
 		}
 	}
 	margin: 1.5em 0;
@@ -126,4 +126,35 @@ td .notes{
 .ui-button:hover,
 .InputfieldFieldset .Inputfield  > .ui-widget-header:hover, .InputfieldFieldsetOpen .Inputfield > .ui-widget-header:hover{
   text-shadow: 0 1px 1px rgba(0,0,0,.2)!important;
+}
+.gravatar{
+	.box-shadow(0 1px 2px @blueDark);
+	display: inline-block;
+	vertical-align: middle;
+	// padding: 4px;
+	margin-right: 1em ;
+	height: 50px;
+	width: 50px;
+	background: #fff;
+}
+.user-menu{
+	display: inline-block;
+	margin: 0;
+	padding: 11px 0;
+	vertical-align: middle;
+	
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 14px;
+	// text-shadow: 0 0 4px @blueDark;
+	a:hover{
+		color: @grayDark !important;
+	}
+}
+.user-name{
+	color: #fff;
+}
+.user-logout{
+	color: @blueDarker;
+	font-size: 12px;
 }
