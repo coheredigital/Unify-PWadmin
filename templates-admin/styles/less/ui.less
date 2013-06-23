@@ -309,12 +309,13 @@ a.on#_WireTabDelete{
 
 .langTabs.ui-tabs{
     border-color: rgba(0,0,0,0.15);
+    border-top: none;
     margin: -13px -11px;
     .ui-tabs-nav{
         padding: 4px 10px 0 !important;
         background: @grayLighter;
         border: none;
-        border-bottom: 1px solid @grayLight;
+        border-bottom: 1px solid darken(@grayLight, 2%);
         position: relative;
         z-index: 0;
         margin: 0;
@@ -339,7 +340,7 @@ a.on#_WireTabDelete{
             }
             &.ui-state-default.ui-state-active{
                 background: #fff !important;
-                border: 1px solid @grayLight !important;
+                border: 1px solid darken(@grayLight, 2%) !important;
                 border-bottom-color: #fff !important;
             }
             a{
@@ -351,6 +352,6 @@ a.on#_WireTabDelete{
         }
     }
     .ui-tabs-panel{
-        // border-top: 1px solid @grayLighter!important;
+        margin-bottom: 0;
     }
 } 
