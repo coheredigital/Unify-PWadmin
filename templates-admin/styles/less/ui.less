@@ -306,3 +306,51 @@ a.on#_WireTabDelete{
     }
 
 }
+
+.langTabs.ui-tabs{
+    border-color: rgba(0,0,0,0.15);
+    margin: -13px -11px;
+    .ui-tabs-nav{
+        padding: 4px 10px 0 !important;
+        background: @grayLighter;
+        border: none;
+        border-bottom: 1px solid @grayLight;
+        position: relative;
+        z-index: 0;
+        margin: 0;
+        .box-sizing(border-box);
+        li{
+            margin-bottom: -1px !important;
+            position: relative;
+            z-index: 1000;
+            // bottom: -1px;
+            &.ui-state-default{
+                background: transparent!important;
+                border: none !important;
+                border: 1px solid transparent !important;
+
+            }
+
+            &.ui-state-default.ui-state-hover{
+                background: transparent!important;
+                a{
+                    color: @pink !important;
+                }
+            }
+            &.ui-state-default.ui-state-active{
+                background: #fff !important;
+                border: 1px solid @grayLight !important;
+                border-bottom-color: #fff !important;
+            }
+            a{
+                margin: 0;
+                text-transform: uppercase;
+                font-size: 11px;
+                padding: 3px 7px 2px !important;
+            }
+        }
+    }
+    .ui-tabs-panel{
+        // border-top: 1px solid @grayLighter!important;
+    }
+} 
