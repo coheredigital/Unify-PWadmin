@@ -16,9 +16,23 @@ a.PageListPage:hover {
 	.PageListItem{
 		border-top: none!important;
 	}
+	.PageListItem + .PageListActions{
+		margin-bottom: 0.5em !important;
+		display: block;
+		.PageListActionMore{
+			
+			a{
+				margin: 0 !important;
+			}
+			border: none!important;
+		}
+
+	}
+
 }
 
 .PageListItem {
+	clear: both;
 	border-bottom: 1px solid @grayLighter;
 	border-top: 1px solid #fff;
 
@@ -115,26 +129,75 @@ a.PageListPage:hover {
 	}
 
 }
-.PageListPagination{
-	padding: 5px 0 8px 0;
+ul.MarkupPagerNav,
+ul.PageListPagination{
+	padding: 0;
+	display: block !important;
+	margin: 1em 0 0.6em !important;
+	// float: left;
+	// overflow: hidden;
+	height: 20px;
+	.clearfix();
+	background: #fff;
+	border: 1px solid rgba(0,0,0,0.15);
 	li{
+		margin: -1px 4px -1px -1px;
+		line-height: 20px;
+		padding: 0;
+		display: block;
+		float: left;
+		background: transparent;
+		border: none;
 		a{
 			background: transparent;
-			padding: 3px 8px;
-			margin: 4px 0;
+			color: @grayDark;
+			padding: 0 6px;
+			min-width: 9px;
+			text-align: center;
+			margin: 0;
+			font-size: 11px;
+			display: block;
+			border: 1px solid transparent !important;
+		}
+		a:hover{
+			background-color: @pink;
+			border: 1px solid rgba(0,0,0,0.15) !important;
+			color: #fff;
 		}
 	}
-	.PageListPagination0:last-child{
-		background-position: -454px -72px;
-	}
+	
 	.PageListPaginationCurrent{
-		background: #fff!important;
 		a{
-			background: @pink;
+			background: @blue;
+			border: 1px solid rgba(0,0,0,0.15) !important;
 			color: #fff;
 			opacity: 1!important;
 		}
 	}
+	
+	a.ui-priority-secondary{
+		color:transparent !important;
+		height: 16px !important;
+		width: 16px;
+		margin: 2px 6px 2px 2px;
+
+		padding: 0;
+		opacity: 0.6;
+		background-color: transparent !important;
+		border-color: transparent !important;
+		background: url(jqueryui/images/ui-icons.png) -32px -16px no-repeat;
+		&:hover,
+		&.ui-state-hover{
+			border-color: transparent !important;
+			opacity: 1;
+		}
+	}
+	li:first-child .ui-priority-secondary{
+		background-position: -96px -16px;
+	}
+}
+#ProcessPageSearchResults > .MarkupPagerNav{
+	margin-top: 0 !important;
 }
 
 // Page statuses 
@@ -182,7 +245,7 @@ a.PageListPage:hover {
 }
 
  .PageListPlaceholder{
-	overflow: hidden;
+	// overflow: hidden;
  	.PageListPlaceholderItem{
 		border: 1px dashed @grayLight !important;
 		background: @grayLighter;
@@ -192,12 +255,6 @@ a.PageListPage:hover {
  	}
 }
 
-.PageListActionMore{
-	display: block!important;
-	border: none!important;
-	padding: 0 0 12px 0!important;
-
-}
 
 
 .PageListLoading{
