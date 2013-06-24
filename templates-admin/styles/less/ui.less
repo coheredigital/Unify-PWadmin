@@ -311,9 +311,10 @@ a.on#_WireTabDelete{
     border-color: rgba(0,0,0,0.15);
     border-top: none;
     margin: -13px -11px;
+    // border-top: 1px solid #fff;
     .ui-tabs-nav{
         padding: 4px 10px 0 !important;
-        background: @grayLighter;
+        background: lighten(@grayLighter, 4%);
         border: none;
         border-bottom: 1px solid darken(@grayLight, 2%);
         position: relative;
@@ -357,3 +358,16 @@ a.on#_WireTabDelete{
         border-top: 1px solid darken(@grayLight, 2%) !important;
     }
 } 
+// .InputfieldFieldset.Inputfield .Inputfields .Inputfield,
+// .InputfieldFieldsetOpen.Inputfield .Inputfields .Inputfield{
+//     .langTabs.ui-tabs{
+//         border-top: 1px solid #ccc;
+//     }
+// }
+.LangTabsContainer{
+    background: lighten(@grayLighter, 4%) !important;
+    .description{
+        padding: 0 0 1.7em 0 !important;
+        color: @grayDark !important;
+    }
+}
