@@ -110,7 +110,6 @@ $config->scripts->append($config->urls->adminTemplates . "scripts/jquery.collage
 		<div class="container">
 			<div id="user-menu" class="fleft">
 				
-				<?php include("_gravatar.inc") ?>
 				<?php $gravatar = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $user->email ) ) ) . "?d=mm&s=50"; ?>
 				<?php if ($gravatar): ?>
 					<?php $edit = __("Edit Profile"); ?>
