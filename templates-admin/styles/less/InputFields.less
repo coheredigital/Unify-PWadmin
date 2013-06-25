@@ -287,6 +287,23 @@
 /**
  * REPEATER field
  */
+.InputfieldRepeater{
+	
+		.Inputfield{
+			.box-shadow(none);
+			label{
+				text-shadow: none;
+			}
+		}
+	
+}
+.InputfieldRepeaterDeletePending > label.ui-state-error{
+	background: @error !important;
+	.ui-icon{
+		background-image: url(jqueryui/images/ui-icons-white.png);
+		opacity: 1;
+	}
+}
 .InputfieldRepeaterAddItem{
 	float: right;
 	position: relative;
@@ -309,6 +326,8 @@
     }
 	
 }
+
+
 .InputfieldRepeaterAddItem:hover{
    
     .InputfieldRepeaterAddLink{
@@ -490,7 +509,6 @@
 .InputfieldStateError{
 	.ui-widget-header{
 		background: @error!important;
-		border-color:@error;
 	}
 	span.ui-state-error{
 		background: transparent;
