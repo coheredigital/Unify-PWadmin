@@ -1,31 +1,60 @@
 @import "less/vars.less";
 @import "less/mixins.less";
-@import "jqueryui/jqui.less";
-@import "less/snippets.less";
+.InputfieldRadiosStacked input,
+#roles_editor input,
+.InputfieldCheckbox  input,
+.InputfieldPageAutocomplete .ui-state-default,
+.ui-widget-header,
+.ui-button{
+	border: none !important;
+}
 
+#header,
+.WireTabs{
+	border: 1px solid @grayLight;
+}
 
-#metro_pw{
-	#breadcrumbs {
+.Inputfield .ui-widget-content{
+	border-color: @grayLight;
+}
+
+.InputfieldFieldset.Inputfield .Inputfields .Inputfield>label.ui-widget-header, 
+.InputfieldFieldsetOpen.Inputfield .Inputfields .Inputfield>label.ui-widget-header{
+	background: @grayLight;
+}
+
+#user-menu{
+	> a,
+	.user-menu{
+		float: left;
+		display: block;
+	}
+	> a{
+		width: 56px;
+		height: 56px;
+		margin-right: 1em;
+	}
+}
+#breadcrumbs {
+	li {
 		
-		li {
-			display: inline-block;
-			a {
-				padding: 0 8px;
-				border-right: 1px solid @grayLight;
-				&:after, &:before {
-					display: none;
-				}
-			}
-			a:first-child{
-				border-left: 1px solid @grayLight;
+		a{
+			position: relative;
+			&:before {
+				content: "\203A";
+				top: -3px;
+				right: 0;
+				font-size: 20px;
+				font-family: Verdana, Geneva, sans-serif;
+				font-weight: bold;
+				border: none !important;
+				color: #ccc;
+			}			
+			&:after {
+				z-index: -1;
+				display: none;
 			}
 		}
-	}
 
-	ul.subpages{
-		border: 1px solid @grayLight;
-	}
-	select{
-		padding: 5px 0;
 	}
 }
