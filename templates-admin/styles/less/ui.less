@@ -306,14 +306,24 @@ a.on#_WireTabDelete{
     }
 
 }
-
+.langTabsContainer{
+     
+     padding-top: 0 !important;
+     > .ui-widget-content{
+        background: lighten(@grayLighter, 4%) !important;
+     }
+     .description{
+        padding-top: 1em;
+     }
+}
 .langTabs.ui-tabs{
     border-color: rgba(0,0,0,0.15);
     border-top: none;
-    margin: -13px -11px;
+    margin: 0 -11px -13px;
+    clear: both;
     .ui-tabs-nav{
         padding: 4px 10px 0 !important;
-        background: lighten(@grayLighter, 4%);
+        background-color: transparent;
         border: none;
         border-bottom: 1px solid darken(@grayLight, 2%);
         position: relative;
