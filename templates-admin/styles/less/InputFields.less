@@ -444,10 +444,10 @@
 
 .InputfieldButton, .InputfieldSubmit{
 	.box-shadow( none);
-	padding: 0;
+	// padding: 0;
 	.ui-widget-content{
 		padding: 0;
-		padding-top: 12px;
+		// padding-top: 12px;
 		border: none;
 		.box-shadow( none);
 		background: transparent;
@@ -469,16 +469,21 @@
 	overflow: hidden;
 	background: transparent;
 	padding: 0;
-	padding-top: 12px;
+	padding-top: 1em;
 	border: none!important;
-	.box-shadow( none );
-	#submit_save{
-		float: none!important;
-	}
+	// .box-shadow( none );
+	z-index: 5;
+	position: relative;
+ 	#submit_publish{
+ 		float: none !important;
+ 	}
 	> .Inputfield{
-		float: left;
+		float: none !important;
 		clear: none;
-		margin: 0;
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 1em 0 0;
+		padding: 0;
 		.box-shadow( none );
 
 	}
@@ -496,12 +501,6 @@
 	color: #222;
 }
 
-.InputfieldSubmit, .InputfieldMarkup, .InputfieldFile  {
-	.ui-widget-content{
-		display: block;
-
-	}
-}
 .InputfieldStateToggle {
 	cursor: pointer;
 	span.ui-icon{float: right}
