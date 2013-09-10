@@ -1,4 +1,13 @@
 <?php
+
+/**
+ * ProcessWire 2.x Admin Markup Template
+ *
+ * Copyright 2012 by Ryan Cramer
+ *
+ *
+ */
+
 $searchForm = $user->hasPermission('page-edit') ? $modules->get('ProcessPageSearch')->renderSearchForm() : '';
 $bodyClass = $input->get->modal ? 'modal' : '';
 if(!isset($content)) $content = '';
@@ -6,13 +15,32 @@ $config->styles->prepend($config->urls->adminTemplates . "styles/jqueryui/jqui.c
 $config->styles->prepend($config->urls->adminTemplates . "styles/style.css");
 $config->scripts->append($config->urls->adminTemplates . "scripts/main.js");
 $config->scripts->append($config->urls->adminTemplates . "scripts/jquery.collagePlus.min.js");
+$config->scripts->append($config->urls->root . "wire/templates-admin/scripts/inputfields.js");
+
+$browserTitle = wire('processBrowserTitle'); 
+if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FILE__) . ' &bull; ProcessWire';
+
+/*
+ * Dynamic phrases that we want to be automatically translated
+ *
+ * These are in a comment so that they register with the parser, in place of the dynamic __() function calls with page titles. 
+ * 
+ * __("Pages"); 
+ * __("Setup"); 
+ * __("Modules"); 
+ * __("Access"); 
+ * __("Admin"); 
+ * 
+ */
+
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo __('en', __FILE__); // HTML tag lang attribute
+	/* this intentionally on a separate line */ ?>"> 
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="robots" content="noindex, nofollow" />
-	<title><?php echo strip_tags($page->get("browser_title|headline|title|name")); ?> &rsaquo; ProcessWire</title>
+	<title><?php echo $browserTitle; ?></title>
 	<script type="text/javascript">
 	<?php
 	$jsConfig = $config->js();
@@ -74,7 +102,7 @@ $config->scripts->append($config->urls->adminTemplates . "scripts/jquery.collage
 		</div>
 		<div id="header">
 			<div class="container">
-				<h1><?php echo strip_tags($this->fuel->processHeadline ? $this->fuel->processHeadline : $page->get("title|name")); ?></h1>
+				<h1 id='title'><?php echo __(strip_tags($this->fuel->processHeadline ? $this->fuel->processHeadline : $page->get("title|name")), __FILE__); ?></h1>
 		    	<?php if(trim($page->summary)) echo "<h2>{$page->summary}</h2>"; ?>
 			</div>
 		</div>
@@ -84,11 +112,11 @@ $config->scripts->append($config->urls->adminTemplates . "scripts/jquery.collage
 				<?php
 					foreach($this->fuel('breadcrumbs') as $breadcrumb) {
 						$class = strpos($page->path, $breadcrumb->path) === 0 ? " class='active'" : '';
-						$title = htmlspecialchars(strip_tags($breadcrumb->title));
+						$title = __($breadcrumb->title, __FILE__);
 						echo "<li $class><a href='{$breadcrumb->url}'>{$title}</a></li>";
 					}
 				?>
-				<li class="fright"><a target="_blank" id="view-site" href="<?php echo $config->urls->root; ?>">View Site</a></li>
+				<li class="fright"><a target="_blank" id="view-site" href="<?php echo $config->urls->root; ?>"><?php echo __('Site', __FILE__); ?></a></li>
 				</ul>
 			</div>
 		</div>
@@ -112,7 +140,7 @@ $config->scripts->append($config->urls->adminTemplates . "scripts/jquery.collage
 				
 				<?php $gravatar = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $user->email ) ) ) . "?d=mm&s=50"; ?>
 				<?php if ($gravatar): ?>
-					<?php $edit = __("Edit Profile"); ?>
+					<?php $edit = __('profile', __FILE__); ?>
 					<?php if ($user->hasPermission('profile-edit')) echo "<a title='{$edit}' class='tooltip' href='{$config->urls->admin}profile/'>" ?>
 					<img class="gravatar" src="<?php echo $gravatar; ?>" alt="">
 					<?php if ($user->hasPermission('profile-edit')) echo "</a>" ?>

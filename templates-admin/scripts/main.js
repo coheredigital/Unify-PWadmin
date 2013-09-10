@@ -16,7 +16,7 @@ var ProcessWireAdminTheme = {
 		this.setupButtonStates();
 		this.setupFieldFocus();
 		this.setupTooltips();
-		this.sizeTitle();
+		// this.sizeTitle();
 		$('#content').removeClass('fouc_fix'); // FOUC fix
 		this.browserCheck();
 	},
@@ -118,47 +118,47 @@ var ProcessWireAdminTheme = {
 	 * If we get below a certain size, then we introduce line wrap
 	 *
 	 */
-	sizeTitle: function() {
-		// adjust the font-size of #title to fit within the screen's width
-		var $title = $("#title"); 
+	// sizeTitle: function() {
+	// 	// adjust the font-size of #title to fit within the screen's width
+	// 	var $title = $("#title"); 
 
-		// don't bother continuing if the title isn't a consideration
-		if($title.size() == 0 || $title.text().length < 35) return;
+	// 	// don't bother continuing if the title isn't a consideration
+	// 	if($title.size() == 0 || $title.text().length < 35) return;
 
-		var titleSizePx = $title.css('font-size'); // original/starting size (likely 37px)
-		var titleSize = parseInt(titleSizePx); // size integer without 'px'
-		var fitTitle = function() {
-			// determine size of possible #head_button so that we don't overlap with it
-			var buttonWidth = 0;
-			var $button = $("#head_button button"); 
-			if($button.size() > 0) buttonWidth = $button.width()+20; // 20=padding
+	// 	var titleSizePx = $title.css('font-size'); // original/starting size (likely 37px)
+	// 	var titleSize = parseInt(titleSizePx); // size integer without 'px'
+	// 	var fitTitle = function() {
+	// 		// determine size of possible #head_button so that we don't overlap with it
+	// 		var buttonWidth = 0;
+	// 		var $button = $("#head_button button"); 
+	// 		if($button.size() > 0) buttonWidth = $button.width()+20; // 20=padding
 
-			// maxTitleWidth is the width of #title's parent minus the buttonWidth
-			maxTitleWidth = $title.parent().width() - buttonWidth; 
+	// 		// maxTitleWidth is the width of #title's parent minus the buttonWidth
+	// 		maxTitleWidth = $title.parent().width() - buttonWidth; 
 			
-			// our default CSS settings when no resizing is needed
-			$title.css({ whiteSpace: 'nowrap', marginTop: '0', paddingRight: '0' }); 
+	// 		// our default CSS settings when no resizing is needed
+	// 		$title.css({ whiteSpace: 'nowrap', marginTop: '0', paddingRight: '0' }); 
 
-			// keep reducing the font-size of title until it fits
-			while($title.width() > maxTitleWidth) {
-				if(--titleSize < 22) {
-					// if we get below 22px, lets wordwrap instead, and then get out
-					$title.css({ marginTop: '-0.75em', whiteSpace: 'normal', paddingRight: buttonWidth + 'px' })
-					break;
-				}
-				$title.css('font-size', titleSize + 'px');
-			}
-		}
+	// 		// keep reducing the font-size of title until it fits
+	// 		while($title.width() > maxTitleWidth) {
+	// 			if(--titleSize < 22) {
+	// 				// if we get below 22px, lets wordwrap instead, and then get out
+	// 				$title.css({ marginTop: '-0.75em', whiteSpace: 'normal', paddingRight: buttonWidth + 'px' })
+	// 				break;
+	// 			}
+	// 			$title.css('font-size', titleSize + 'px');
+	// 		}
+	// 	}
 
-		// when the window is resized, update the title size
-		$(window).resize(function() {
-			$title.css('font-size', titleSizePx);
-			titleSize = parseInt(titleSizePx);
-			fitTitle();
-		});
+	// 	// when the window is resized, update the title size
+	// 	$(window).resize(function() {
+	// 		$title.css('font-size', titleSizePx);
+	// 		titleSize = parseInt(titleSizePx);
+	// 		fitTitle();
+	// 	});
 
-		fitTitle();
-	},
+	// 	fitTitle();
+	// },
 
 	/**
 	 * Give a notice to IE versions we don't support
@@ -173,23 +173,5 @@ var ProcessWireAdminTheme = {
 
 
 $(document).ready(function() {
-
-	// setup the toggles for Inputfields and the animations that occur between opening and closing
-	$(".Inputfields > .Inputfield > .ui-widget-header").addClass("InputfieldStateToggle")
-		.prepend("<span class='ui-icon ui-icon-triangle-1-s'></span>")
-		.click(function() {
-			var $li = $(this).parent('.Inputfield'); 	
-			$li.toggleClass('InputfieldStateCollapsed', 100);
-			$(this).children('span.ui-icon').toggleClass('ui-icon-triangle-1-e ui-icon-triangle-1-s'); 
-
-			if($.effects && $.effects['highlight']) $li.children('.ui-widget-header').effect('highlight', {}, 300); 
-			return false;
-		})
-
-	// use different icon for open and closed
-	$(".Inputfields .InputfieldStateCollapsed > .ui-widget-header span.ui-icon")
-		.removeClass('ui-icon-triangle-1-s').addClass('ui-icon-triangle-1-e'); 
-
-
 	ProcessWireAdminTheme.init();
 }); 
