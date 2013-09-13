@@ -56,6 +56,18 @@
 		border-top: 0;
 		position: relative;
 	}
+
+		.actions{
+			a{
+			 	.ui-state-default();
+		    	.ui-button();
+			}
+			a:hover{
+
+		    	background: #d52978;
+
+			}
+		}		
 }
 
 // .InputfieldStateRequired label{
@@ -182,6 +194,7 @@
 	}
 }
 .InputfieldFileList{
+	padding-top: 0 ;
 	.InputfieldFile{
 		border: none !important;
 		width: 100%;
@@ -369,19 +382,11 @@
 	
 	.PageListRoot{
 		padding-bottom: 0;
-		line-height: 29px;
+		line-height: 28px;
 		.PageListSelectActionToggle{
-		    padding: 7px 8px!important;
-		    color: @grayDark!important;
-		    color: #fff!important;
-		    background: @blue;
-		    border: 1px solid rgba(0,0,0,0.15);
-		    text-transform: uppercase;
+		    padding: 0 8px!important;
 		    font-size: 11px;
-		    font-weight: bold;
-
 			&:hover{
-				
 				background: @pink;
 			}
 		}
@@ -596,19 +601,11 @@
 	.InputfieldFileLanguageInfo{
 		clear: both;
 		margin-top: -0.2em;
-		.actions{
-			a{
-			 	.ui-state-default();
-		    	.ui-button();
-			}
-			a:hover{
 
-		    	background: #d52978;
-
-			}
-		}	
 	}
 }
+
+		
 
 // added for Inputfield Dependencies
 .InputfieldForm .Inputfields .InputfieldColumnWidthFirstTmp, 
@@ -643,4 +640,10 @@
 		line-height: 1.4em;
 		word-spacing:1em;
 	}
+}
+
+.LanguageFilesActions{
+	float: right;
+	padding-bottom: 2.1em;
+	margin-top: -3em;
 }
