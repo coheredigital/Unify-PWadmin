@@ -7,6 +7,7 @@
  *
  *
  */
+$config->versionInt = str_replace(".", "", $config->version);
 
 $searchForm = $user->hasPermission('page-edit') ? $modules->get('ProcessPageSearch')->renderSearchForm() : '';
 $bodyClass = $input->get->modal ? 'modal' : '';
@@ -15,8 +16,12 @@ $config->styles->prepend($config->urls->adminTemplates . "styles/jqueryui/jqui.c
 $config->styles->prepend($config->urls->adminTemplates . "styles/style.css");
 $config->scripts->append($config->urls->adminTemplates . "scripts/main.js");
 $config->scripts->append($config->urls->adminTemplates . "scripts/jquery.collagePlus.min.js");
-$config->scripts->append($config->urls->root . "wire/templates-admin/scripts/inputfields.js");
 
+if ($config->versionInt > 230){
+	$config->scripts->append($config->urls->root . "wire/templates-admin/scripts/inputfields.js");
+	$config->styles->append($config->urls->root . "wire/templates-admin/styles/font-awesome/css/font-awesome.min.css");
+}
+	
 $browserTitle = wire('processBrowserTitle'); 
 if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FILE__) . ' &bull; ProcessWire';
 

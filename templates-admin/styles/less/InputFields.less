@@ -1,4 +1,4 @@
-#Unify #ProcessPageEdit{
+#Unify #content .InputfieldForm { // this is a disturbing level of specificity
 	.Inputfields {
 		padding: 0;
 		margin: 0;
@@ -59,18 +59,24 @@
 				position: relative;
 			}
 
-				.actions{
-					a{
-					 	.ui-state-default();
-				    	.ui-button();
-					}
-					a:hover{
+			.actions{
+				a{
+				 	.ui-state-default();
+			    	.ui-button();
+				}
+				a:hover{
 
-				    	background: #d52978;
+			    	background: #d52978;
 
-					}
-				}		
+				}
+			}	
+
+			.toggle-icon{
+				float: right;
+				margin: 9px;
+			}	
 		}
+
 
 	}
 
@@ -329,21 +335,25 @@
 		float: right;
 		position: relative;
 		.InputfieldRepeaterAddLink{
-			 .ui-state-default();
+			.ui-state-default();
 		    .ui-button();
 		   
 		    padding-left: 26px!important;
 		    display: block;
 		    
 		}
-
+		.icon-plus,
 	    .ui-icon{
-	    	background-image: url(jqueryui/images/ui-icons-white.png);
 	    	position: absolute;
-	    	float: left;
 	    	z-index: 5;
 	    	top:6px;
 	    	left: 6px;
+	    }
+	    .icon-plus{
+	    	margin: 2px;
+	    }
+	    .ui-icon{
+	    	background-image: url(jqueryui/images/ui-icons-white.png);
 	    }
 		
 	}
@@ -392,7 +402,8 @@
 			padding-bottom: 0;
 			line-height: 28px;
 			.PageListSelectActionToggle{
-			    padding: 0 8px!important;
+			    padding: 0 7px!important;
+			    line-height: 1.5em;
 			    font-size: 11px;
 				&:hover{
 					background: @pink;
