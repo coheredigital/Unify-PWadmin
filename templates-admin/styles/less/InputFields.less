@@ -1,4 +1,4 @@
-#Unify #content .InputfieldForm { // this is a disturbing level of specificity
+#Unify > #wrapper #main #content .container{ // this is a disturbing level of specificity
 	.Inputfields {
 		padding: 0;
 		margin: 0;
@@ -468,10 +468,10 @@
 
 	.InputfieldButton, .InputfieldSubmit{
 		.box-shadow( none) !important;
-		// padding: 0;
 		> .InputfieldContent,
 		> .ui-widget-content{
-			padding: 0;
+			padding: 1em 0 !important;
+			margin: 0;
 			// padding-top: 12px;
 			border: none !important;
 			.box-shadow( none) !important;
@@ -490,36 +490,6 @@
 		}
 	}
 
-	#ProcessPageEdit.ProcessPageEditContent > .Inputfields{
-		overflow: hidden;
-		background: transparent;
-		padding: 0;
-		padding-top: 1em;
-		border: none!important;
-		// .box-shadow( none );
-		z-index: 5;
-		position: relative;
-	 	#submit_publish{
-	 		float: none !important;
-	 	}
-		> .Inputfield{
-			float: none !important;
-			clear: none;
-			display: inline-block;
-			vertical-align: middle;
-			margin: 0 1em 0 0;
-			padding: 0;
-			.box-shadow( none );
-
-		}
-		.ui-widget-content{
-			padding: 0;
-			.box-shadow( none );
-			border: none;
-			margin: 0;
-
-		}
-	}
 
 	.ui-state-hover .InputfieldFileUpload .AjaxUploadDropHere{
 		border-color: @blue;
@@ -587,7 +557,7 @@
 
 	.LanguageSupport {
 		margin: 0;
-		padding-bottom: 0.8em;
+		padding-bottom: 1em;
 	}
 	.LanguageSupport:last-child{
 		margin: 0;
