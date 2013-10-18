@@ -67,7 +67,7 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 <?php if($user->isGuest()):?>
 
 
-<body id="branded" class="login">
+<body id="Unify" class="login">
 	
 	<div class="login-box">
 		<div id="logo">
@@ -90,7 +90,7 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 <?php else: ?>
 
 
-<body <?php if($bodyClass) echo " class='$bodyClass'"; ?> >
+<body id="Unify" <?php if($bodyClass) echo " class='$bodyClass'"; ?> >
 	<div id="wrapper">
 		<div class="nav-wrap">
 			<div class="container">

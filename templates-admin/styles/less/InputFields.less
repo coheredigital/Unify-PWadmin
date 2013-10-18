@@ -1,649 +1,660 @@
-.Inputfields {
-	padding: 0;
-	margin: 0;
-	textarea,
-	.InputfieldMaxWidth,
-	.InputfieldDatetimeDatepicker  {
-		width: 100%;
-	}
-	input:focus, select:focus, textarea:focus {
-		border-color: @blue;
-		outline: none;
-	}
-
-	> li.InputfieldColumnWidth {
-		float: left;
-		clear: none;
-		margin-top: 0;
-		margin-left: 1%;
-	}
-	> li.InputfieldColumnWidth.InputfieldColumnWidthFirst {
-		clear: both;
-		margin-left: 0;
-	}
-	.ui-widget-content {
-		background: #fff;
-		.clearfix();
-	}
-}
-
-.Inputfield{
-	border: 0!important;
-	.box-shadow( 0 1px 3px rgba(0,0,0,0.1));
-	margin-bottom: 12px;
-	clear: both;
-
-	input, select, textarea{
-		.box-sizing(border-box);
+#Unify #ProcessPageEdit{
+	.Inputfields {
+		padding: 0;
 		margin: 0;
-		padding: 6px;
-	}
-
-	> label.ui-widget-header{
-		margin: 0;
-		display: block;
-	}
-	> label.ui-widget-header:hover{
-		background: @blue!important;
-		color: #fff!important;
-		text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-		.ui-icon {background-image: url(jqueryui/images/ui-icons-white.png)!important; opacity: 1; }
-
-	}
-	> .ui-widget-content {
-		padding: 12px 10px;
-		border: 1px solid rgba(0,0,0,0.15);
-		border-top: 0;
-		position: relative;
-	}
-
-		.actions{
-			a{
-			 	.ui-state-default();
-		    	.ui-button();
-			}
-			a:hover{
-
-		    	background: #d52978;
-
-			}
-		}		
-}
-
-// .InputfieldStateRequired label{
-	
-// }
-
-// delete state
-.InputfieldRepeaterDeletePending .ui-widget-header,
-.Inputfield > .ui-widget-header.ui-state-error{
-    color: #fff!important;
-    background: @error;
-}
-
-
-// second level nested inputs
-.InputfieldFieldset,
-.InputfieldFieldsetOpen{
-	> .ui-widget-content{
-		padding-bottom: 0;
-	}
-
-}
-
-// second level nested inputs
-.InputfieldFieldset.Inputfield .Inputfields .Inputfield,
-.InputfieldFieldsetOpen.Inputfield .Inputfields .Inputfield{
-	.box-shadow(none);
-	> label.ui-widget-header{
-		background: @grayLighter;
-		color: @grayDark!important; 
-		&:hover{
-			color: #fff!important;
+		textarea,
+		.InputfieldMaxWidth,
+		.InputfieldDatetimeDatepicker  {
+			width: 100%;
 		}
-		text-shadow: none;
-		.ui-icon {background-image: url(jqueryui/images/ui-icons.png); }
-	}
-}
-
-
-
-.InputfieldStateCollapsed{
-	.box-shadow(none);
-	> label.ui-widget-header{
-		background: @grayLight !important;
-		color: darken(@gray,22%)!important;
-		text-shadow: 1px 1px 1px @grayLighter;
-		border-color: rgba(0,0,0,0.1);
-		.ui-icon {
-			background-image: url(jqueryui/images/ui-icons.png);
-			opacity: 0.7;
+		input:focus, select:focus, textarea:focus {
+			border-color: @blue;
+			outline: none;
 		}
-	}
-}
 
-// BUTTON
-
-.InputfieldButton {
-	margin: 0 !important;
-	.ui-widget-content{
-		padding: 0 !important;
-	}
-}
-
-// FILE FIELD
-.InputfieldFileName{
-	margin-left: 4px;
-}
-
-.InputfieldFile.ui-widget{
-	margin:  0 0 9px 0;
-	padding: 0;
-}
-.InputfieldFileUpload{
-	padding: 10px 0 20px 0;
-	position: static !important;
-	input{
-		.box-shadow(none);
-		border: 1px solid #fff !important;
-		padding: 0!important;
-		position: relative!important;
-		margin: 1.2em 0 0 !important;
-		line-height: 1em !important;
-	}
-
-	.AjaxUploadDropHere{
-		width: 100%;
-		position: absolute;
-		bottom: 0;
-		top: auto !important;
-		display: block !important;
-		margin: 0 -1px -1px 1px;
-		padding: 6px 0;
-		background: @grayLighter;
-		border: 1px solid rgba(0,0,0,0.15) !important;
-		text-transform: uppercase;
-		text-shadow: 1px 1px 1px #fff;
-		font-style: normal;
-		font-weight: bold;
-		color: darken(@gray, 5%);
-		text-align: center;
-		opacity: 1 !important;
-		.ui-icon.ui-icon-arrowreturnthick-1-s{
-			display: inline-block;
-			vertical-align: text-top;
-			background-position: 0 -48px;
-			opacity: 0.6;
+		> li.InputfieldColumnWidth {
+			float: left;
+			clear: none;
+			margin-top: 0;
+			margin-left: 1%;
 		}
-	}
-	.InputfieldFileValidExtensions{
-		font-size: 11px;
-		line-height: 20px;
-	
-		color: @gray;
-	}
-}
-
-.ui-widget-content.ui-state-hover .AjaxUploadDropHere{
-	background: @success !important;
-	color: rgba(255,255,255,0.9) !important;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
-	.ui-icon.ui-icon-arrowreturnthick-1-s{
-		background-position: -64px -48px;
-		opacity: 0.9;
-	}
-}
-.InputfieldFileList{
-	padding-top: 0 ;
-	.InputfieldFile{
-		border: none !important;
-		width: 100%;
-		position: relative;
-		.InputfieldFileInfo{
-			position: relative;
-			.ui-widget-header();
-			.ui-icon{
-				background-image: url(jqueryui/images/ui-icons-white.png);
-			}
-			.ui-icon-arrowthickstop-1-n,
-			.ui-icon-arrowthickstop-1-s{
-				
-				position: absolute;
-				right: 37px;
-				top: auto !important;
-				bottom: 3px;
-			}
-			.InputfieldFileMove{
-				display: none !important;
-			}	
-			.ui-icon-arrowthickstop-1-s{
-				right: 19px;
-			}
-			line-height: 16px;
-			height: auto !important;
-			padding: 2px 4px;
-			overflow: hidden;
-			border: 1px solid rgba(0,0,0,0.15)!important;
-			font-weight: normal;
-			font-size: 12px;
-
-			span, a, label{
-
-				// display: inline-block !important;
-				vertical-align: middle !important;
-			}
-
-			.InputfieldFileName{
-				// float: left;
-				text-shadow: 0 0 1px rgba(0,0,0,0.2);
-				color: #fff;
-				display: inline-block !important; 
-				text-overflow: ellipsis;
-				overflow: hidden;
-				max-width: 90%;
-				white-space: nowrap;
-			}
-
-
-			.InputfieldFileStats{
-				display: inline-block !important; 
-				font-weight: normal;
-				// white-space: nowrap;
-				font-size: 11px;
-			}
-			// &:hover .InputfieldFileStats{
-			// 	visibility: hidden;
-			// }
-			&.ui-state-hover{
-				background: @pink ;
-			}
-			&.ui-state-highlight{
-				background: @notice !important;
-			}
-			&.ui-state-error{
-				background: @error !important;
-			}
-
+		> li.InputfieldColumnWidth.InputfieldColumnWidthFirst {
+			clear: both;
+			margin-left: 0;
 		}
-		.InputfieldFileData{
-			padding: 12px!important;
-			border: 1px solid rgba(0,0,0,0.15);
-			border-top: none;
-			label .detail{
+		.ui-widget-content {
+			background: #fff;
+			.clearfix();
+		}
+
+		.Inputfield{
+			border: 0!important;
+			.box-shadow( 0 1px 3px rgba(0,0,0,0.1));
+			margin-bottom: 12px;
+			clear: both;
+
+			input, select, textarea{
+				.box-sizing(border-box);
+				margin: 0;
+				padding: 6px;
+			}
+
+			> label.InputfieldHeader,
+			> label.ui-widget-header{
+				margin: 0;
 				display: block !important;
-				color: @gray;
-				clear: both;
-				padding: 0.2em 0;
 			}
-		}
-		input{
-			width: 100% !important;
-		}
-		&.ui-sortable-helper{
-			.InputfieldFileStats,
-			.InputfieldFileName{
-				text-shadow: none;
-				color: @grayDark;
+			> label.ui-widget-header:hover{
+				background: @blue!important;
+				color: #fff!important;
+				text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+				.ui-icon {background-image: url(jqueryui/images/ui-icons-white.png)!important; opacity: 1; }
+
 			}
-		}
-		&.AjaxUpload{
-			.InputfieldFileInfo{
-				background-color: transparent !important;
-				border-color: transparent !important;
-				z-index: 5;
+			> .InputfieldContent,
+			> .ui-widget-content {
+				padding: 12px 10px;
+				border: 1px solid rgba(0,0,0,0.15);
+				border-top: 0;
 				position: relative;
 			}
-		}
-	}
-}
 
-/**
- * REPEATER field
- */
-.InputfieldRepeater{
-	
-		.Inputfield{
-			.box-shadow(none);
-			label{
-				text-shadow: none;
-			}
+				.actions{
+					a{
+					 	.ui-state-default();
+				    	.ui-button();
+					}
+					a:hover{
+
+				    	background: #d52978;
+
+					}
+				}		
 		}
-	
-}
-.InputfieldRepeaterDeletePending > label.ui-state-error{
-	background: @error !important;
-	.ui-icon{
-		background-image: url(jqueryui/images/ui-icons-white.png);
-		opacity: 1;
-	}
-}
-.InputfieldRepeaterAddItem{
-	float: right;
-	position: relative;
-	.InputfieldRepeaterAddLink{
-		 .ui-state-default();
-	    .ui-button();
-	   
-	    padding-left: 26px!important;
-	    display: block;
-	    
+
 	}
 
-    .ui-icon{
-    	background-image: url(jqueryui/images/ui-icons-white.png);
-    	position: absolute;
-    	float: left;
-    	z-index: 5;
-    	top:6px;
-    	left: 6px;
-    }
-	
-}
 
 
-.InputfieldRepeaterAddItem:hover{
-   
-    .InputfieldRepeaterAddLink{
 
-	    .ui-button.ui-state-hover();
-	    color: #fff;
-	    
-	}
-   
-	
-}
-.InputfieldRepeater{
-	.InputfieldFieldset{
 
-		> .ui-widget-header.ui-state-default{
-			background: lighten(@grayLighter, 4%);;
-			color: @grayDark!important;
-		}
-		> label.ui-widget-header:hover{;
-			background: @blue;
-			color: #fff!important;
-		}
-		> .ui-widget-header.ui-state-focus{
-			background: @blueDark!important;
-		}
-		> .ui-widget-header.ui-state-highlight{
-			background: @notice!important;
-			color: @grayDark!important;
-			.ui-icon {background-image: url(jqueryui/images/ui-icons.png)!important; }
-		}
+	// .InputfieldStateRequired label{
+		
+	// }
+
+	// delete state
+	.InputfieldRepeaterDeletePending .ui-widget-header,
+	.Inputfield > .ui-widget-header.ui-state-error{
+	    color: #fff!important;
+	    background: @error;
 	}
 
-}
 
-/**
- * PageListSelect
- */
-.Inputfield{
-	
-	.PageListRoot{
-		padding-bottom: 0;
-		line-height: 28px;
-		.PageListSelectActionToggle{
-		    padding: 0 8px!important;
-		    font-size: 11px;
+	// second level nested inputs
+	.InputfieldFieldset,
+	.InputfieldFieldsetOpen{
+		> .ui-widget-content{
+			padding-bottom: 0;
+		}
+
+	}
+
+	// second level nested inputs
+	.InputfieldFieldset.Inputfield .Inputfields .Inputfield,
+	.InputfieldFieldsetOpen.Inputfield .Inputfields .Inputfield{
+		.box-shadow(none);
+		> label.ui-widget-header{
+			background: @grayLighter;
+			color: @grayDark!important; 
 			&:hover{
-				background: @pink;
+				color: #fff!important;
+			}
+			text-shadow: none;
+			.ui-icon {background-image: url(jqueryui/images/ui-icons.png); }
+		}
+	}
+
+
+
+	.InputfieldStateCollapsed{
+		.box-shadow(none);
+		> label.ui-widget-header{
+			background: @grayLight !important;
+			color: darken(@gray,22%)!important;
+			text-shadow: 1px 1px 1px @grayLighter;
+			border-color: rgba(0,0,0,0.1);
+			.ui-icon {
+				background-image: url(jqueryui/images/ui-icons.png);
+				opacity: 0.7;
 			}
 		}
-		> .PageList{
-			margin: 4px 0 0 0!important;
+	}
+
+	// BUTTON
+
+	.InputfieldButton {
+		margin: 0 !important;
+		.ui-widget-content{
+			padding: 0 !important;
 		}
 	}
-}
-.InputfieldPageListSelectMultiple{
 
-	ol{
-		padding: 0 !important;
-		margin: 0 0 1em 0 !important;
+	// FILE FIELD
+	.InputfieldFileName{
+		margin-left: 4px;
 	}
-	li{
-		width: auto !important;
-	}
-	.PageListSelectName,
-	.PageListSelectHeader{
-		display: block !important;
-	}
-}
 
-.InputfieldPageAutocomplete{
-	ol{
+	.InputfieldFile.ui-widget{
+		margin:  0 0 9px 0;
 		padding: 0;
 	}
-}
-.ui-state-hover .AjaxUploadDropHere{
-	border-color: @blue;
-}
-
-
-.InputfieldStateToggle.ui-widget-header {
-	padding: 0 0 0 9px;
-	background: @grayDark;
-	border: 1px solid rgba(0,0,0,0.15);
-	color: #fff!important;
-	line-height: 30px;
-
-	.ui-icon{
-		margin: 6px 8px 0 0!important;
-		padding: 0;
-	}
-	&.ui-state-default{ // reapeter uses this
-		background: white;
-	}
-
-}
-
-.InputfieldCheckboxesStacked{
-	padding: 0;
-	li{
-		padding-bottom: 0.4em;
+	.InputfieldFileUpload{
+		padding: 10px 0 20px 0;
+		position: static !important;
 		input{
-			margin-right: 0.2em;
+			.box-shadow(none);
+			border: 1px solid #fff !important;
+			padding: 0!important;
+			position: relative!important;
+			margin: 1.2em 0 0 !important;
+			line-height: 1em !important;
 		}
-	}
-}
 
-.InputfieldButton, .InputfieldSubmit{
-	.box-shadow( none);
-	// padding: 0;
-	.ui-widget-content{
-		padding: 0;
-		// padding-top: 12px;
-		border: none;
-		.box-shadow( none);
-		background: transparent;
-		label{
-			padding: 0 0.6em;
-			display: inline-block;
+		.AjaxUploadDropHere{
+			width: 100%;
+			position: absolute;
+			bottom: 0;
+			top: auto !important;
+			display: block !important;
+			margin: 0 -1px -1px 1px;
+			padding: 6px 0;
+			background: @grayLighter;
+			border: 1px solid rgba(0,0,0,0.15) !important;
+			text-transform: uppercase;
+			text-shadow: 1px 1px 1px #fff;
+			font-style: normal;
+			font-weight: bold;
+			color: darken(@gray, 5%);
+			text-align: center;
+			opacity: 1 !important;
+			.ui-icon.ui-icon-arrowreturnthick-1-s{
+				display: inline-block;
+				vertical-align: text-top;
+				background-position: 0 -48px;
+				opacity: 0.6;
+			}
 		}
-		select{
-			margin: 0;
-		}
-		label, input{
-			margin: 0.1em;
-			vertical-align: text-top;
-		}
-	}
-}
-
-#ProcessPageEdit.ProcessPageEditContent > .Inputfields{
-	overflow: hidden;
-	background: transparent;
-	padding: 0;
-	padding-top: 1em;
-	border: none!important;
-	// .box-shadow( none );
-	z-index: 5;
-	position: relative;
- 	#submit_publish{
- 		float: none !important;
- 	}
-	> .Inputfield{
-		float: none !important;
-		clear: none;
-		display: inline-block;
-		vertical-align: middle;
-		margin: 0 1em 0 0;
-		padding: 0;
-		.box-shadow( none );
-
-	}
-	.ui-widget-content{
-		padding: 0;
-		.box-shadow( none );
-		border: none;
-		margin: 0;
-
-	}
-}
-
-.ui-state-hover .InputfieldFileUpload .AjaxUploadDropHere{
-	border-color: @blue;
-	color: #222;
-}
-
-.InputfieldStateToggle {
-	cursor: pointer;
-	span.ui-icon{float: right}
-}
-.InputfieldStateError{
-	.ui-widget-header{
-		background: @error!important;
-	}
-	span.ui-state-error{
-		background: transparent;
-		// border: 0;
-		color: @errorDark;
-		font-weight: bold;
-	}
-}
-
-
-#fieldgroupContext{
-	position: static;
-	overflow: hidden;
-	float: right;
-	padding: 0 0 12px;
-	select{
-		margin: 0 0 0 8px;
-	}
-}
-#ProcessPageSearchOptionsForm{
-	input, select{
-		width: 100%;
-	}
-}
-
-
-
-.InputfieldFieldsetTabOpen,
-.InputfieldWrapper{
-	.box-shadow(none);
-}
-
-
-// sortable
-.InputfieldPageAutocompleteSortable{
-	margin-bottom: 1em!important;
-}
-.ui-sortable{
-	position: relative;
-	li{
-		.box-sizing(border-box)!important;
-	}
-	li:last-child{
-		margin-bottom: 1px!important;
-	}
-	.ui-sortable-helper{
-		left: 0;
-		right: 0;
-		// display: block !important;
-	}
-}
-
-.LanguageSupport {
-	margin: 0 0 0.8em 0;
-}
-.LanguageSupport:last-child{
-	margin: 0;
-}
-
-.LanguageSupportLabel {
-	margin: 0 0 0.2em 0;
-	color: @gray;
-	// text-transform: uppercase;
-	font-size: 12px;
-	font-weight: bold;
-	// text-align: right;
-	display: block;
-}
-.Inputfield_language_files .ui-widget{
-	border: 1px solid rgba(0,0,0,0.15) !important;
-	.InputfieldFileData {
-		border: none !important;
-	}
-	.notes{
-		background-color: transparent !important;
-		border: none;
-		padding: 0;
-		color: #999;
-		.ui-state-error-text{
-			color: #c00;
-		}
-	}
-	.InputfieldFileInfo{
-		margin: -1px;
-	}
-	.InputfieldFileLanguageInfo{
-		clear: both;
-		margin-top: -0.2em;
-
-	}
-}
-
+		.InputfieldFileValidExtensions{
+			font-size: 11px;
+			line-height: 20px;
 		
+			color: @gray;
+		}
+	}
 
-// added for Inputfield Dependencies
-.InputfieldForm .Inputfields .InputfieldColumnWidthFirstTmp, 
-.InputfieldForm .Inputfields .InputfieldColumnWidthFirst.InputfieldStateHidden + .Inputfield {
-  /* for support of inputfield dependencies */ 
-  clear: both; 
-  margin-left: 0; 
-}
+	.ui-widget-content.ui-state-hover .AjaxUploadDropHere{
+		background: @success !important;
+		color: rgba(255,255,255,0.9) !important;
+		text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
+		.ui-icon.ui-icon-arrowreturnthick-1-s{
+			background-position: -64px -48px;
+			opacity: 0.9;
+		}
+	}
+	.InputfieldFileList{
+		padding-top: 0 ;
+		.InputfieldFile{
+			border: none !important;
+			width: 100%;
+			position: relative;
+			.InputfieldFileInfo{
+				position: relative;
+				.ui-widget-header();
+				.ui-icon{
+					background-image: url(jqueryui/images/ui-icons-white.png);
+				}
+				.ui-icon-arrowthickstop-1-n,
+				.ui-icon-arrowthickstop-1-s{
+					
+					position: absolute;
+					right: 37px;
+					top: auto !important;
+					bottom: 3px;
+				}
+				.InputfieldFileMove{
+					display: none !important;
+				}	
+				.ui-icon-arrowthickstop-1-s{
+					right: 19px;
+				}
+				line-height: 16px;
+				height: auto !important;
+				padding: 2px 4px;
+				overflow: hidden;
+				border: 1px solid rgba(0,0,0,0.15)!important;
+				font-weight: normal;
+				font-size: 12px;
+
+				span, a, label{
+
+					// display: inline-block !important;
+					vertical-align: middle !important;
+				}
+
+				.InputfieldFileName{
+					// float: left;
+					text-shadow: 0 0 1px rgba(0,0,0,0.2);
+					color: #fff;
+					display: inline-block !important; 
+					text-overflow: ellipsis;
+					overflow: hidden;
+					max-width: 90%;
+					white-space: nowrap;
+				}
 
 
-.asmListItem{
-	> span{
-		display: inline-block !important;
-		vertical-align: text-bottom;
-		top: -2px;
+				.InputfieldFileStats{
+					display: inline-block !important; 
+					font-weight: normal;
+					// white-space: nowrap;
+					font-size: 11px;
+				}
+				// &:hover .InputfieldFileStats{
+				// 	visibility: hidden;
+				// }
+				&.ui-state-hover{
+					background: @pink ;
+				}
+				&.ui-state-highlight{
+					background: @notice !important;
+				}
+				&.ui-state-error{
+					background: @error !important;
+				}
+
+			}
+			.InputfieldFileData{
+				padding: 12px!important;
+				border: 1px solid rgba(0,0,0,0.15);
+				border-top: none;
+				label .detail{
+					display: block !important;
+					color: @gray;
+					clear: both;
+					padding: 0.2em 0;
+				}
+			}
+			input{
+				width: 100% !important;
+			}
+			&.ui-sortable-helper{
+				.InputfieldFileStats,
+				.InputfieldFileName{
+					text-shadow: none;
+					color: @grayDark;
+				}
+			}
+			&.AjaxUpload{
+				.InputfieldFileInfo{
+					background-color: transparent !important;
+					border-color: transparent !important;
+					z-index: 5;
+					position: relative;
+				}
+			}
+		}
+	}
+
+	/**
+	 * REPEATER field
+	 */
+	.InputfieldRepeater{
 		
-		font-style: 12px !important;
+			.Inputfield{
+				.box-shadow(none);
+				label{
+					text-shadow: none;
+				}
+			}
+		
+	}
+	.InputfieldRepeaterDeletePending > label.ui-state-error{
+		background: @error !important;
 		.ui-icon{
-			display: inline-block !important;
-			top: 2px !important;
-			margin-top: -3px !important;
-			margin-bottom: -1px !important;
-			// vertical-align: text-bottom;
-		}
-		.ui-icon-extlink{
-			display: none !important;
+			background-image: url(jqueryui/images/ui-icons-white.png);
+			opacity: 1;
 		}
 	}
-	.asmListItemStatus{
-		right: 2em;
-		padding: 2px;
-		line-height: 1.4em;
-		word-spacing:1em;
-	}
-}
+	.InputfieldRepeaterAddItem{
+		float: right;
+		position: relative;
+		.InputfieldRepeaterAddLink{
+			 .ui-state-default();
+		    .ui-button();
+		   
+		    padding-left: 26px!important;
+		    display: block;
+		    
+		}
 
-.LanguageFilesActions{
-	float: right;
-	padding-bottom: 2.1em;
-	margin-top: -3em;
+	    .ui-icon{
+	    	background-image: url(jqueryui/images/ui-icons-white.png);
+	    	position: absolute;
+	    	float: left;
+	    	z-index: 5;
+	    	top:6px;
+	    	left: 6px;
+	    }
+		
+	}
+
+
+	.InputfieldRepeaterAddItem:hover{
+	   
+	    .InputfieldRepeaterAddLink{
+
+		    .ui-button.ui-state-hover();
+		    color: #fff;
+		    
+		}
+	   
+		
+	}
+	.InputfieldRepeater{
+		.InputfieldFieldset{
+
+			> .ui-widget-header.ui-state-default{
+				background: lighten(@grayLighter, 4%);;
+				color: @grayDark!important;
+			}
+			> label.ui-widget-header:hover{;
+				background: @blue;
+				color: #fff!important;
+			}
+			> .ui-widget-header.ui-state-focus{
+				background: @blueDark!important;
+			}
+			> .ui-widget-header.ui-state-highlight{
+				background: @notice!important;
+				color: @grayDark!important;
+				.ui-icon {background-image: url(jqueryui/images/ui-icons.png)!important; }
+			}
+		}
+
+	}
+
+	/**
+	 * PageListSelect
+	 */
+	.Inputfield{
+		
+		.PageListRoot{
+			padding-bottom: 0;
+			line-height: 28px;
+			.PageListSelectActionToggle{
+			    padding: 0 8px!important;
+			    font-size: 11px;
+				&:hover{
+					background: @pink;
+				}
+			}
+			> .PageList{
+				margin: 4px 0 0 0!important;
+			}
+		}
+	}
+	.InputfieldPageListSelectMultiple{
+
+		ol{
+			padding: 0 !important;
+			margin: 0 0 1em 0 !important;
+		}
+		li{
+			width: auto !important;
+		}
+		.PageListSelectName,
+		.PageListSelectHeader{
+			display: block !important;
+		}
+	}
+
+	.InputfieldPageAutocomplete{
+		ol{
+			padding: 0;
+		}
+	}
+	.ui-state-hover .AjaxUploadDropHere{
+		border-color: @blue;
+	}
+
+
+	.InputfieldStateToggle.ui-widget-header {
+		padding: 0 0 0 9px;
+		background: @grayDark;
+		border: 1px solid rgba(0,0,0,0.15);
+		color: #fff!important;
+		line-height: 30px;
+
+		.ui-icon{
+			margin: 6px 8px 0 0!important;
+			padding: 0;
+		}
+		&.ui-state-default{ // reapeter uses this
+			background: white;
+		}
+
+	}
+
+	.InputfieldCheckboxesStacked{
+		padding: 0;
+		li{
+			padding-bottom: 0.4em;
+			input{
+				margin-right: 0.2em;
+			}
+		}
+	}
+
+	.InputfieldButton, .InputfieldSubmit{
+		.box-shadow( none) !important;
+		// padding: 0;
+		> .InputfieldContent,
+		> .ui-widget-content{
+			padding: 0;
+			// padding-top: 12px;
+			border: none !important;
+			.box-shadow( none) !important;
+			background: transparent;
+			label{
+				padding: 0 0.6em;
+				display: inline-block;
+			}
+			select{
+				margin: 0;
+			}
+			label, input{
+				margin: 0.1em;
+				vertical-align: text-top;
+			}
+		}
+	}
+
+	#ProcessPageEdit.ProcessPageEditContent > .Inputfields{
+		overflow: hidden;
+		background: transparent;
+		padding: 0;
+		padding-top: 1em;
+		border: none!important;
+		// .box-shadow( none );
+		z-index: 5;
+		position: relative;
+	 	#submit_publish{
+	 		float: none !important;
+	 	}
+		> .Inputfield{
+			float: none !important;
+			clear: none;
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0 1em 0 0;
+			padding: 0;
+			.box-shadow( none );
+
+		}
+		.ui-widget-content{
+			padding: 0;
+			.box-shadow( none );
+			border: none;
+			margin: 0;
+
+		}
+	}
+
+	.ui-state-hover .InputfieldFileUpload .AjaxUploadDropHere{
+		border-color: @blue;
+		color: #222;
+	}
+
+	.InputfieldStateToggle {
+		cursor: pointer;
+		span.ui-icon{float: right}
+	}
+	.InputfieldStateError{
+		.ui-widget-header{
+			background: @error!important;
+		}
+		span.ui-state-error{
+			background: transparent;
+			// border: 0;
+			color: @errorDark;
+			font-weight: bold;
+		}
+	}
+
+
+	#fieldgroupContext{
+		position: static;
+		overflow: hidden;
+		float: right;
+		padding: 0 0 12px;
+		select{
+			margin: 0 0 0 8px;
+		}
+	}
+	#ProcessPageSearchOptionsForm{
+		input, select{
+			width: 100%;
+		}
+	}
+
+
+
+	.InputfieldFieldsetTabOpen,
+	.InputfieldWrapper{
+		.box-shadow(none) !important;
+	}
+
+
+	// sortable
+	.InputfieldPageAutocompleteSortable{
+		margin-bottom: 1em!important;
+	}
+	.ui-sortable{
+		position: relative;
+		li{
+			.box-sizing(border-box)!important;
+		}
+		li:last-child{
+			margin-bottom: 1px!important;
+		}
+		.ui-sortable-helper{
+			left: 0;
+			right: 0;
+			// display: block !important;
+		}
+	}
+
+	.LanguageSupport {
+		margin: 0 0 0.8em 0;
+	}
+	.LanguageSupport:last-child{
+		margin: 0;
+	}
+
+	.LanguageSupportLabel {
+		margin: 0 0 0.2em 0;
+		color: @gray;
+		// text-transform: uppercase;
+		font-size: 12px;
+		font-weight: bold;
+		// text-align: right;
+		display: block;
+	}
+	.Inputfield_language_files .ui-widget{
+		border: 1px solid rgba(0,0,0,0.15) !important;
+		.InputfieldFileData {
+			border: none !important;
+		}
+		.notes{
+			background-color: transparent !important;
+			border: none;
+			padding: 0;
+			color: #999;
+			.ui-state-error-text{
+				color: #c00;
+			}
+		}
+		.InputfieldFileInfo{
+			margin: -1px;
+		}
+		.InputfieldFileLanguageInfo{
+			clear: both;
+			margin-top: -0.2em;
+
+		}
+	}
+
+			
+
+	// added for Inputfield Dependencies
+	.InputfieldForm .Inputfields .InputfieldColumnWidthFirstTmp, 
+	.InputfieldForm .Inputfields .InputfieldColumnWidthFirst.InputfieldStateHidden + .Inputfield {
+	  /* for support of inputfield dependencies */ 
+	  clear: both; 
+	  margin-left: 0; 
+	}
+
+
+	.asmListItem{
+		> span{
+			display: inline-block !important;
+			vertical-align: text-bottom;
+			top: -2px;
+			
+			font-style: 12px !important;
+			.ui-icon{
+				display: inline-block !important;
+				top: 2px !important;
+				margin-top: -3px !important;
+				margin-bottom: -1px !important;
+				// vertical-align: text-bottom;
+			}
+			.ui-icon-extlink{
+				display: none !important;
+			}
+		}
+		.asmListItemStatus{
+			right: 2em;
+			padding: 2px;
+			line-height: 1.4em;
+			word-spacing:1em;
+		}
+	}
+
+	.LanguageFilesActions{
+		float: right;
+		padding-bottom: 2.1em;
+		margin-top: -3em;
+	}
+
 }
