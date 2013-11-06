@@ -113,7 +113,9 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 		</div>
 		<div id="bread">
 			<div class="container">
+
 				<ul id="breadcrumbs">
+
 				<?php
 					foreach($this->fuel('breadcrumbs') as $breadcrumb) {
 						$class = strpos($page->path, $breadcrumb->path) === 0 ? " class='active'" : '';
@@ -121,7 +123,8 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 						echo "<li $class><a href='{$breadcrumb->url}'>{$title}</a></li>";
 					}
 				?>
-				<li class="fright"><a target="_blank" id="view-site" href="<?php echo $config->urls->root; ?>"><?php echo __('Site', __FILE__); ?></a></li>
+					<li class="fright"><a target="_blank"  href="<?php echo $config->urls->root; ?>"><?php echo __('View Site', __FILE__); ?></a></li>
+					
 				</ul>
 			</div>
 		</div>
