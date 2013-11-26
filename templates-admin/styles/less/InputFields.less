@@ -57,7 +57,10 @@
 				border: 1px solid rgba(0,0,0,0.15);
 				border-top: 0;
 				position: relative;
-			}
+				
+			}			
+
+			
 
 			.actions{
 				a{
@@ -467,11 +470,17 @@
 	}
 
 	.InputfieldButton, .InputfieldSubmit{
+		display: inline-block;
+		clear: both;
+		vertical-align: middle;
+		margin-top: 1em;
 		.box-shadow( none) !important;
 		> .InputfieldContent,
 		> .ui-widget-content{
 			padding: 1em 0 !important;
-			margin: 0;
+			height: 30px !important;
+			margin: 0 !important;
+			overflow: hidden;
 			// padding-top: 12px;
 			border: none !important;
 			.box-shadow( none) !important;
@@ -486,6 +495,11 @@
 			label, input{
 				margin: 0.1em;
 				vertical-align: text-top;
+			}
+			&:after {
+			  content: "";
+			  display: table;
+			  clear: both;
 			}
 		}
 	}
